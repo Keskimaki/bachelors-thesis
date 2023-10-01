@@ -12,7 +12,7 @@ Orkestraatioalustat, kuten Kubernetes, mahdollistavat muun muassa palveluiden re
 
 Kontti on karsittu ympäristö, joka koostuu palvelusta ja sen tarvitsemista riippuvuuksista.
 Kontti tarjoaa vakaan ja suljetun ympäristön palvelun suorittamiselle \cite{Watada19}.
-Kontti on riippumaton fyysisestä palvelimesta ja sen ulkopuolisestä ympäristöstä, joka mahdollistaa saman kontin toistamisen muilla palvelimilla ja alustoilla \cite{Kang16}.
+Kontti on riippumaton fyysisestä palvelimesta ja sen ulkopuolisestä ympäristöstä, joka mahdollistaa saman kontin toistamisen muilla palvelimilla ja alustoilla \cite{Saha18}.
 
 Virtuaalikonejulkaisuista poiketen useampi kontti voi jakaa resursseja ja näin ollen esimerkiksi käyttöjärjestelmän ydintä ei tarvitse säilöä erikseen jokaiseen konttiin.
 Tämän seurauksena kontit ovat kokonsa ja käynnistysnopeudensa suhteen virtualisointia tehokkaampi ratkaisu \cite{Dua14}.
@@ -31,7 +31,7 @@ Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillis
 \end{center}
 \end{figure}
 
-\section{Konttiorkestraatioalustat}
+\section{Konttiorkestraatioalustat\label{platforms}}
 
 Erityisesti mikropalvelupohjaiset järjestelmät saattavat koostu useista sadoista konteista.
 Myös muun muassa saman palvelun replikaatio ja alueellinen hajauttaminen luovat tarpeen hallinnoida suuria määriä kontteja \cite{Khan17}.
@@ -50,7 +50,7 @@ Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
 
 \begin{itemize}
 \item Resurssien käytön hallinta (engl. \textit{resource limit control}): Muisti- ja suoritinresurssien minimi- ja maksimimäärän asettamisen konttikohtaisesti.
-\item Aikataulutus (engl. \textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri fyysisille palvelimille.
+\item Aikataulutus (engl. \textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri nodejen välillä.
 \item Kuormituksen tasapainottaminen (engl. \textit{load balancing}): Kuormituksen jakaminen useiden konttien välillä. 
 \item Terveystarkastus (engl. \textit{health check}): Konttien toimivuuden tarkastus ja viallisiin kontteihin reagointi.
 \item Vikasietoisuus (engl. \textit{fault tolerance}): Automaattinen uusien konttien luonti ja viallisten tuhoaminen virhetilanteissa.
@@ -67,3 +67,20 @@ Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
 %\end{figure}
 
 \section{Konttien orkestrointi ja DevOps-toimintamalli}
+
+Konttiteknologiaa ja konttien orkestrointia käytetään usein osana DevOps-toimintamalliin perustuvaa ohjelmistotuotantoa \cite{Kang16, Narasimhulu23}.
+Konttiteknologia avulla samaa kontitettua palvelua voi siirtää eri ympäristöjen välillä.
+Konttiteknologia mahdollistaa myös koko palvelun ympäristön konfiguroinnin ja näin ennustettavamman toiminnan ja helpomman vianmäärityksen \cite{Narasimhulu23}.
+
+Kontin siirrettävyys mahdollistaa tehokkaan varmennus- sekä julkaisuvaiheen DevOps-toimintamallissa, koska samaa konttia voidaan ensin käyttää testauksessa ja sen jälkeen siirtä se esimerkiksi julkaisualustana toimivalle konttiorkestraatioalustalle.
+Kontin ympäristön konfiguroitavuus taas auttaa operointi- ja monitorointivaiheissa.
+Kontin erikseen määritettävästä ympäristöstä voi olla hyötyä myös kehitysvaiheessa, koska se mahdollistaa useille kehittäjille samanlaisen tuotantoympäristöä muistuttavan kehitysympäristön.
+
+Luvussa \ref{platforms} käsitellyt Kuberneteksen tarjoamat konttien orkestrointipalvelut tukevat myös hyvin DevOps-toimintamallia.
+Resurssien käytön hallinta, aikataulutus, kuormituksen tasapainottaminen ja automaattinen skaalautuminen tukevat kaikki hyvin operointivaihetta.
+Terveystarkatus ja vikasietoisuus taas tukevat monitorointia.
+Konttiorkestraatioalustan käyttö myös itsessään mahdollistaa konttiteknologian käytön palvelun julkaisuratkaisuna, joka tekee saman kontin käytöstä testauksessa ja tuotantokäytössä mahdollista.
+
+Konttiteknologian ja konttien orkestroinnin käytöstä osana DevOps-toimintamallia on löytynyt paljon etuja.
+Seuraavaksi tarkoituksena on tarkastella muita julkaisutapoja ja niiden soveltuvuutta DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
+Näitä julkaisutapoja verrataan myös konttiteknologian ja konttien orkestraation käyttöön.
