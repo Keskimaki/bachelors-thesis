@@ -2,7 +2,7 @@
 
 DevOps:illa tarkoitetaan ohjelmistokehityksen (engl. \textit{development}) ja IT-toimintojen (engl. \textit{operations}) yhdistämistä.
 DevOps:iin liitetään usein jatkuva integraatio ja toimitus sekä automaatio ja laadunvalvonta \cite{Jabbari16, Leite19}.
-DevOps:ia käsitteenä voidaan tarkastella ajattelutapana tai käytännön ohjelmistotuotannon toimintamallinna.
+DevOps:ia käsitteenä voidaan tarkastella ajattelutapana tai käytännön ohjelmistotuotannon toimintamallina.
 
 DevOps ajattelutapana pyrkii ohjelmistokehityksen ja IT-toimintojen jaon välttämiseen ja yhteistoiminnan mahdollistavan kulttuurin rakentamiseen \cite{Klein21}.
 DevOps toimintamallina taas keskittyy käytännön toimiin ja teknologioihin, jotka mahdollistavat DevOps-ajattelutavan mukaisen ohjelmistotuotannon.
@@ -10,7 +10,7 @@ Tässä tutkielmassa keskitytään aiheen käsittelyyn käytännön toimintamall
 
 \section{DevOps-toimintamalli}
 
-DevOps-toimintamalli painottaa jatkuvaa integraatiota ja toimitustasekä laadunvalvontaa käyttäen standardisoituja automaattisia menetelmiä \cite{Leite19}.
+DevOps-toimintamalli painottaa jatkuvaa integraatiota ja toimitusta sekä laadunvalvontaa käyttäen standardisoituja automaattisia menetelmiä \cite{Leite19}.
 Kuva~\ref{fig:devops} visualisoi DevOps-toimintamallin eri vaiheita.
 Kehitys- ja operaatiovaiheet tapahtuvat limittäin ja koko prosessi voidaan suorittaa useita kertoja päivässä automatisoidun julkaisuputken avulla.
 
@@ -24,8 +24,8 @@ Kehitys- ja operaatiovaiheet tapahtuvat limittäin ja koko prosessi voidaan suor
 DevOps-toimintamallin vaiheet ja niistä käytetyt termit vaihtelevat lähteestä riippuen, mutta tämän tutkielman osalta käytetään seuraavia vaiheita \cite{Alnafessah21}:
 
 \begin{itemize}
-\item Määrittely (engl. \textit{plan}): Ohjelmistotuotannon tavoitteiden määrittely sekä päivitysten ja julkaisuiden alustava suunnitelma.
-\item Kehitys (engl. \textit{create, develop}): Määrittelyn mukainen ohjelmisto- ja infrastruktuurikoodin kehitys nopealla commit-syklillä.
+\item Määrittely (engl. \textit{plan}): Ohjelmistotuotannon tavoitteiden määrittely sekä päivitysten ja julkaisuiden alustava suunnittelu.
+\item Kehitys (engl. \textit{create, develop}): Määrittelyn mukainen ohjelmisto- ja infrastruktuurikoodin kehitys nopealla versiohallintaan viennillä.
 \item Varmennus (engl. \textit{verify, test}): Jatkuva koodin automaattinen testaus ja koodin manuaalinen arviointi tarvittaessa.
 \item Julkaisu (engl. \textit{release, deploy}): Uuden ohjelmakoodin julkaisu tuotantoympäristöön ja tuotantoalustan konfiguraatio.
 \item Operointi (engl. \textit{operate, configure}): Julkaisun jälkeinen palvelun hallinnointi, resurssien hallinta ja palvelun skaalautuminen.
@@ -34,7 +34,7 @@ DevOps-toimintamallin vaiheet ja niistä käytetyt termit vaihtelevat lähteest�
 
 \section{Jatkuva integraatio ja toimitus}
 
-Jatkuva integraatio ja toimitus (engl. \textit{continuous integration and continuous deployment, CI/CD}) on keskeinen osa DevOps-toimintamallia \cite{Jabbari16, Leite19}. Jatkossa käsitteisiin viitataan tutkielmassa vakiintuneilla lyhenteillä CI ja CD.
+Jatkuva integraatio ja toimitus (engl. \textit{continuous integration and continuous deployment, CI/CD}) on keskeinen osa DevOps-toimintamallia \cite{Jabbari16, Leite19}. Jatkossa tutkielmassa käsitteisiin viitataan vakiintuneilla lyhenteillä CI ja CD.
 
 CI viittaa koodimuutosten vientiin versionhallintaan nopealla tahdilla ja muutosten automaattiseen testaukseen sen yhteydessä.
 CD taas tarkoittaa CI:n seurauksena validoidun koodin automaattista julkaisua tuotantoympäristöön tai sitä muistuttavaan testiympäristöön \cite{Shahin17}.
@@ -58,10 +58,10 @@ CI/CD ja toimintamallin vaiheiden seuraaminen nopealla syklillä vaatii automaat
 Ohjelmistokehittäjien perehdyttäminen DevOps:in mukaisiin toimintatapoihin ja teknologiohiin on yksi haasteista.
 Myös DevOps-toimintamallin käyttöönotto sekä toimintamallin seurannan laadun arvioiminen on haastavaa \cite{Leite19}.
 
-% Needs more text about issues within DevOps
-
 DevOps-toimintamallin käyttöönoton yhteydessä on arvioitava erilaisten teknologioiden soveltuvuuttaa osaksi mallin mukaista ohjelmistotuotantoa.
 Yksi teknologiavalinnoista on julkaisutavan valinta.
 Automaation ja toistettavuuden kannalta ratkaisuksi sopisi esimerkiksi virtuaalikoneet tai konttiteknologia \cite{Dua14}.
 Konttiteknologiaa ja konttien orkestrointia voidaan käyttää onnistuneesti osana DevOps-toimintamallia \cite{Kang16, Narasimhulu23}.
 Seuraavaksi käsitellään näitä aiheita ja arvioidaan niiden yhteensopivuuttaa DevOps-toimintamallin kanssa.
+
+\textit{Tähän vielä enemmän haasteista ja ehkä myös hyötyjä, eli syitä miksi pitäisi tehdä DevOps:in mukaista ohjelmistokehitystä.}

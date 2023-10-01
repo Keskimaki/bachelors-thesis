@@ -1,16 +1,14 @@
 \chapter{Johdanto\label{intro}}
 
-% Rewrite all of this later
-
-Konttiteknologiaa käytetään kasvavissa määrissä monilla ohjelmistotuotannon osa alueilla.
-Konttiteknologia mahdollistaa fyysisen palvelimen tai ohjelmistökehittäjän tietokoneen suoritusympäristöstä eroavan vakaan ja rajattomasti toistettavan ympäristön \cite{Watada19}.
+Konttiteknologiaa käytetään monilla ohjelmistotuotannon osa alueilla.
+Konttiteknologia mahdollistaa palvelimen suoritusympäristöstä eroavan vakaan ja toistettavan ympäristön \cite{Watada19}.
 Konttiteknologian kasvava käyttö on luonut tarpeen hallinnoida suuria määriä kontteja samanaikaisesti.
 Tähän tarpeeseen pyrkivät vastaamaan erilaiset konttiorkestraatioalustat.
 
 Konttiorkestraatioalustat hallinnoivat suuria määriä kontteja jaetussa klusterissa.
 Orkestraatioalustat, kuten Kubernetes, mahdollistavat muun muassa palveluiden replikoinnin, tehokkaan julkaisuketjun, kontitettujen palveluiden monitoroinnin ja virhetiloista toipumisen \cite{Khan17}.
 
-Konttiteknologiaa ja konttien orkestraatiota käytetään usein osana DevOps-toimintamalliin perustuvaa ohjelmistotuotantoa \cite{Kang16}.
+Konttiteknologiaa ja konttien orkestraatiota käytetään usein osana DevOps-toimintamalliin perustuvaa ohjelmistotuotantoa \cite{Kang16, Narasimhulu23}.
 DevOps-toimintamalli pyrkii jatkuvaan integraatioon ja nopeaan julkaisusykliin.
 Toimintamalli pohjautuu julkaisun ja laadunvalvonnann osalta tarkasti määriteltyihin automaattisiin prosesseihin \cite{Jabbari16}.
 
@@ -18,7 +16,8 @@ Tämän tutkielman tavoitteena on tarkastella DevOps:ia käsitteenä ja konttite
 Näin tarkoituksena on todeta konttien orkestroinnin ja DevOps-toimintamallin välinen yhteensopivuus.
 Konttien orkestroinnin lisäksi käsitellään myös muita mahdollisia ratkaisuja ja niiden vaikutusta DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
 
-% Rewrite once you actually know what is going on
-Luvussa \ref{devops} annetaan määritelmä DevOps-termille ja erotellaan siitä tutkielman kannalta merkitykselliset osa-alueet.
+Luvussa \ref{devops} annetaan määritelmä termille DevOps ja erotellaan siitä tutkielman kannalta merkitykselliset osa-alueet.
 Tämän jälkeen kuvataan DevOps-toimintamalliin usein kuuluvia toimintatapoja.
-Luvussa \ref{orchestration} käsitellään konttiteknologiaa ja konttien orkestrointia. Orkestraatiota käsitellään Kubernetes-konttiorkestraatioalustan kautta.
+Luvussa \ref{orchestration} käsitellään konttiteknologiaa ja konttien orkestrointia.
+Orkestraatiota käsitellään erityisesti Kubernetes-konttiorkestraatioalustan ominaisuuksien kautta.
+Lopuksi pohditaan konttiteknologian ja konttien orkestroinnin sopivuutta osaksi DevOps-toimintamallin mukaista ohjelmistotuotantoa.

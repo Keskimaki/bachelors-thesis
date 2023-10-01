@@ -8,6 +8,8 @@ Tähän tarpeeseen pyrkivät vastaamaan erilaiset konttiorkestraatioalustat.
 Konttiorkestraatioalustat hallinnoivat suuria määriä kontteja jaetussa klusterissa.
 Orkestraatioalustat, kuten Kubernetes, mahdollistavat muun muassa palveluiden replikoinnin, tehokkaan julkaisuketjun, kontitettujen palveluiden monitoroinnin ja virhetiloista toipumisen \cite{Khan17}.
 
+\textit{Tässä samaa tekstiä kuin johdannossa, mutta ainakin johdanto menee vielä kokonaan uusiksi myöhemmin.}
+
 \section{Kontti}
 
 Kontti on karsittu ympäristö, joka koostuu palvelusta ja sen tarvitsemista riippuvuuksista.
@@ -43,7 +45,7 @@ Se on nykyisistä ratkaisuista suorituskyvyltään tehokkain ja myös toiminnall
 Muita ratkaisuja ovat muun muassa Docker Swarm ja Amazon Elastic Container Service \cite{Khan17}.
 Tässä tutkielmassa konttien orkestrointia käsitellään pääasiassa Kuberneteksen kautta.
 
-Kubernetes on alkujaan Google kehittämä ja nykyään Linux Foundationin alla toimivan Cloud Native Foundationin hallinnoima avoimen lähdekoodin projekti \cite{Burns22}.
+Kubernetes on alkujaan Googlen kehittämä ja nykyään Linux Foundationin alla toimivan Cloud Native Foundationin hallinnoima avoimen lähdekoodin projekti \cite{Burns22}.
 Kubernetes hallinnoi podeiksi kutsuttuja yhdestä tai useammasta kontista koostuvia kokonaisuuksia.
 Kubernetes-klusteri muodostuu useista fyysisistä palvelimista tai virtuaalikoneista, joita kutsutaan nodeiksi \cite{Medel18}.
 Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
@@ -72,6 +74,8 @@ Konttiteknologiaa ja konttien orkestrointia käytetään usein osana DevOps-toim
 Konttiteknologia avulla samaa kontitettua palvelua voi siirtää eri ympäristöjen välillä.
 Konttiteknologia mahdollistaa myös koko palvelun ympäristön konfiguroinnin ja näin ennustettavamman toiminnan ja helpomman vianmäärityksen \cite{Narasimhulu23}.
 
+\textit{Tässä omaa pohdintaa/aiemmin koottujen tietojen yhdistelyä, joten ei lähteitä. En tiedä onko ok.}
+
 Kontin siirrettävyys mahdollistaa tehokkaan varmennus- sekä julkaisuvaiheen DevOps-toimintamallissa, koska samaa konttia voidaan ensin käyttää testauksessa ja sen jälkeen siirtä se esimerkiksi julkaisualustana toimivalle konttiorkestraatioalustalle.
 Kontin ympäristön konfiguroitavuus taas auttaa operointi- ja monitorointivaiheissa.
 Kontin erikseen määritettävästä ympäristöstä voi olla hyötyä myös kehitysvaiheessa, koska se mahdollistaa useille kehittäjille samanlaisen tuotantoympäristöä muistuttavan kehitysympäristön.
@@ -84,3 +88,5 @@ Konttiorkestraatioalustan käyttö myös itsessään mahdollistaa konttiteknolog
 Konttiteknologian ja konttien orkestroinnin käytöstä osana DevOps-toimintamallia on löytynyt paljon etuja.
 Seuraavaksi tarkoituksena on tarkastella muita julkaisutapoja ja niiden soveltuvuutta DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
 Näitä julkaisutapoja verrataan myös konttiteknologian ja konttien orkestraation käyttöön.
+
+\textit{Seuraavaksi jatkuu eri julkaisutapojen käsittelyyn ja vertailuun.}
