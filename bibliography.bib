@@ -193,68 +193,66 @@
   pages = {3909--3943},
   doi = {10.1109/ACCESS.2017.2685629}
 }
-@INPROCEEDINGS{Abraham20,
-
-  author={Abraham, Subil and Paul, Arnab K. and Khan, Redwan Ibne Seraj and Butt, Ali R.},
-
-  booktitle={2020 IEEE 13th International Conference on Cloud Computing (CLOUD)}, 
-
-  title={On the Use of Containers in High Performance Computing Environments}, 
-
-  year={2020},
-
-  volume={},
-
-  number={},
-
-  pages={284-293},
-
-  doi={10.1109/CLOUD49709.2020.00048}}
-@InProceedings{Gantikow20,
-author="Gantikow, Holger
-and Walter, Steffen
-and Reich, Christoph",
-editor="Jagode, Heike
-and Anzt, Hartwig
-and Juckeland, Guido
-and Ltaief, Hatem",
-title="Rootless Containers with Podman for HPC",
-booktitle="High Performance Computing",
-year="2020",
-publisher="Springer International Publishing",
-address="Cham",
-pages="343--354",
-abstract="Containers have become popular in HPC environments to improve the mobility of applications and the delivery of user-supplied code. In this paper we evaluate Podman, an enterprise container engine that supports rootless containers, in combination with runc and crun as container runtimes using a real-world workload with LS-DYNA, and the industry-standard benchmarks sysbench and STREAM. The results suggest that Podman with crun only introduces a similar low overhead as HPC-focused container technologies.",
-isbn="978-3-030-59851-8"
+@inproceedings{Abraham20,
+  title = {On the Use of Containers in High Performance Computing Environments},
+  author = {Abraham, Subil and Paul, Arnab K. and Khan, Redwan Ibne Seraj and Butt, Ali R.},
+  year = 2020,
+  booktitle = {2020 IEEE 13th International Conference on Cloud Computing (CLOUD)},
+  volume = {},
+  number = {},
+  pages = {284--293},
+  doi = {10.1109/CLOUD49709.2020.00048}
 }
-
-@Article{Zhou21,
-author={Zhou, Naweiluo
-and Georgiou, Yiannis
-and Pospieszny, Marcin
-and Zhong, Li
-and Zhou, Huan
-and Niethammer, Christoph
-and Pejak, Branislav
-and Marko, Oskar
-and Hoppe, Dennis},
-title={Container orchestration on HPC systems through Kubernetes},
-journal={Journal of Cloud Computing},
-year={2021},
-month={Feb},
-day={22},
-volume={10},
-number={1},
-pages={16},
-abstract={Containerisation demonstrates its efficiency in application deployment in Cloud Computing. Containers can encapsulate complex programs with their dependencies in isolated environments making applications more portable, hence are being adopted in High Performance Computing (HPC) clusters. Singularity, initially designed for HPC systems, has become their de facto standard container runtime. Nevertheless, conventional HPC workload managers lack micro-service support and deeply-integrated container management, as opposed to container orchestrators. We introduce a Torque-Operator which serves as a bridge between HPC workload manager (TORQUE) and container orchestrator (Kubernetes). We propose a hybrid architecture that integrates HPC and Cloud clusters seamlessly with little interference to HPC systems where container orchestration is performed on two levels.},
-issn={2192-113X},
-doi={10.1186/s13677-021-00231-z},
-url={https://doi.org/10.1186/s13677-021-00231-z}
+@inproceedings{Gantikow20,
+  title = {Rootless Containers with Podman for HPC},
+  author = {Gantikow, Holger and Walter, Steffen and Reich, Christoph},
+  year = 2020,
+  booktitle = {High Performance Computing},
+  publisher = {Springer International Publishing},
+  address = {Cham},
+  pages = {343--354},
+  isbn = {978-3-030-59851-8},
+  editor = {Jagode, Heike and Anzt, Hartwig and Juckeland, Guido and Ltaief, Hatem},
+  abstract = {Containers have become popular in HPC environments to improve the mobility of applications and the delivery of user-supplied code. In this paper we evaluate Podman, an enterprise container engine that supports rootless containers, in combination with runc and crun as container runtimes using a real-world workload with LS-DYNA, and the industry-standard benchmarks sysbench and STREAM. The results suggest that Podman with crun only introduces a similar low overhead as HPC-focused container technologies.}
 }
-
+@article{Zhou21,
+  title = {Container orchestration on HPC systems through Kubernetes},
+  author = {Zhou, Naweiluo and Georgiou, Yiannis and Pospieszny, Marcin and Zhong, Li and Zhou, Huan and Niethammer, Christoph and Pejak, Branislav and Marko, Oskar and Hoppe, Dennis},
+  year = 2021,
+  month = {Feb},
+  day = 22,
+  journal = {Journal of Cloud Computing},
+  volume = 10,
+  number = 1,
+  pages = 16,
+  doi = {10.1186/s13677-021-00231-z},
+  issn = {2192-113X},
+  url = {https://doi.org/10.1186/s13677-021-00231-z},
+  abstract = {Containerisation demonstrates its efficiency in application deployment in Cloud Computing. Containers can encapsulate complex programs with their dependencies in isolated environments making applications more portable, hence are being adopted in High Performance Computing (HPC) clusters. Singularity, initially designed for HPC systems, has become their de facto standard container runtime. Nevertheless, conventional HPC workload managers lack micro-service support and deeply-integrated container management, as opposed to container orchestrators. We introduce a Torque-Operator which serves as a bridge between HPC workload manager (TORQUE) and container orchestrator (Kubernetes). We propose a hybrid architecture that integrates HPC and Cloud clusters seamlessly with little interference to HPC systems where container orchestration is performed on two levels.}
+}
 @book{Burns22,
-  title={Kubernetes: up and running},
-  author={Burns, Brendan and Beda, Joe and Hightower, Kelsey and Evenson, Lachlan},
-  year={2022},
-  publisher={" O'Reilly Media, Inc."}
+  title = {Kubernetes: up and running},
+  author = {Burns, Brendan and Beda, Joe and Hightower, Kelsey and Evenson, Lachlan},
+  year = 2022,
+  publisher = {" O'Reilly Media, Inc."}
+}
+@misc{Spaleta19,
+  title = {How Kubernetes works},
+  author = {Jef Spaleta},
+  year = 2019,
+  url = {https://www.cncf.io/blog/2019/08/19/how-kubernetes-works/},
+  note = {[haettu 01.10.2023]}
+}
+@article{Medel18,
+  title = {Characterising resource management performance in Kubernetes},
+  author = {Víctor Medel and Rafael Tolosana-Calasanz and José Ángel Bañares and Unai Arronategui and Omer F. Rana},
+  year = 2018,
+  journal = {Computers & Electrical Engineering},
+  volume = 68,
+  pages = {286--297},
+  doi = {https://doi.org/10.1016/j.compeleceng.2018.03.041},
+  issn = {0045-7906},
+  url = {https://www.sciencedirect.com/science/article/pii/S0045790617315240},
+  keywords = {Performance models, Container lifecycle, Cloud resource management, Petri nets, Kubernetes},
+  abstract = {A key challenge for supporting elastic behaviour in cloud systems is to achieve a good performance in automated (de-)provisioning and scheduling of computing resources. One of the key aspects that can be significant is the overheads associated with deploying, terminating and maintaining resources. Therefore, due to their lower start up and termination overhead, containers are rapidly replacing Virtual Machines (VMs) in many cloud deployments, as the computation instance of choice. In this paper, we analyse the performance of Kubernetes achieved through a Petri net-based performance model. Kubernetes is a container management system for a distributed cluster environment. Our model can be characterised using data from a Kubernetes deployment, and can be exploited for supporting capacity planning and designing Kubernetes-based elastic applications.}
 }

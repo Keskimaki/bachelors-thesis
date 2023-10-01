@@ -33,17 +33,37 @@ Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillis
 
 \section{Konttiorkestraatioalustat}
 
-% Rewrite later
-
 Erityisesti mikropalvelupohjaiset järjestelmät saattavat koostu useista sadoista konteista.
 Myös muun muassa saman palvelun replikaatio ja alueellinen hajauttaminen luovat tarpeen hallinnoida suuria määriä kontteja \cite{Khan17}.
 Konttiorkestraatioalustat ovat järjestelmiä, joiden tehtävä on mahdollistaa suurien konttimäärien hallinnointi.
 Orkestraatioalustat muun muassa hallinnoivat konttien resurssien käyttöä, mahdollistavat konttien monitoroinnin ja huolehtivat konttien virhetilanteista toipumisesta \cite{Zhou21}.
 
-Kubernetes on laajalti käytetty konttiorkestraatioratkaisu. Se on nykyisistä ratkaisuista suorituskyvyltään tehokkain ja myös toiminnallisuuksiltaan kattavin \cite{Jawarneh19}. Muita ratkaisuja ovat muun muassa Docker Swarm ja Amazon Elastic Container Service \cite{Khan17}. Tässä tutkielmassa konttien orkestrointia käsitellään pääasiassa Kuberneteksen kautta.
-
-% write something about kubernetes
+Kubernetes on laajalti käytetty konttiorkestraatioratkaisu.
+Se on nykyisistä ratkaisuista suorituskyvyltään tehokkain ja myös toiminnallisuuksiltaan kattavin \cite{Jawarneh19}.
+Muita ratkaisuja ovat muun muassa Docker Swarm ja Amazon Elastic Container Service \cite{Khan17}.
+Tässä tutkielmassa konttien orkestrointia käsitellään pääasiassa Kuberneteksen kautta.
 
 Kubernetes on alkujaan Google kehittämä ja nykyään Linux Foundationin alla toimivan Cloud Native Foundationin hallinnoima avoimen lähdekoodin projekti \cite{Burns22}.
+Kubernetes hallinnoi podeiksi kutsuttuja yhdestä tai useammasta kontista koostuvia kokonaisuuksia.
+Kubernetes-klusteri muodostuu useista fyysisistä palvelimista tai virtuaalikoneista, joita kutsutaan nodeiksi \cite{Medel18}.
+Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
+
+\begin{itemize}
+\item Resurssien käytön hallinta (engl. \textit{resource limit control}): Muisti- ja suoritinresurssien minimi- ja maksimimäärän asettamisen konttikohtaisesti.
+\item Aikataulutus (engl. \textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri fyysisille palvelimille.
+\item Kuormituksen tasapainottaminen (engl. \textit{load balancing}): Kuormituksen jakaminen useiden konttien välillä. 
+\item Terveystarkastus (engl. \textit{health check}): Konttien toimivuuden tarkastus ja viallisiin kontteihin reagointi.
+\item Vikasietoisuus (engl. \textit{fault tolerance}): Automaattinen uusien konttien luonti ja viallisten tuhoaminen virhetilanteissa.
+\item Automaattinen skaalautuminen (engl. \textit{auto-scaling}): Konttien lisääminen tai poistaminen automaattisesti kuormituksen mukaan.
+\end{itemize}
+
+%Kuva \ref{fig:kubernetes} kuvaa Kuberneteksen palveluarkkitehtuuria.
+
+%\begin{figure}[ht]
+%\begin{center}
+%\includegraphics[width=0.9\textwidth]{figures/kubernetes_architecture.png}
+%\caption{Kuberneteksen palveluarkkitehtuuri.\cite{Spaleta19}\label{fig:kubernetes}}
+%\end{center}
+%\end{figure}
 
 \section{Konttien orkestrointi ja DevOps-toimintamalli}
