@@ -33,7 +33,7 @@ Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillis
 
 \section{Konttiorkestraatioalustat\label{platforms}}
 
-Erityisesti mikropalvelupohjaiset järjestelmät saattavat koostu useista sadoista konteista.
+Erityisesti mikropalvelupohjaiset järjestelmät saattavat koostua useista sadoista konteista.
 Myös muun muassa saman palvelun replikaatio ja alueellinen hajauttaminen luovat tarpeen hallinnoida suuria määriä kontteja \cite{Khan17}.
 Konttiorkestraatioalustat ovat järjestelmiä, joiden tehtävä on mahdollistaa suurien konttimäärien hallinnointi.
 Orkestraatioalustat muun muassa hallinnoivat konttien resurssien käyttöä, mahdollistavat konttien monitoroinnin ja huolehtivat konttien virhetilanteista toipumisesta \cite{Zhou21}.
@@ -49,8 +49,8 @@ Kubernetes-klusteri muodostuu useista fyysisistä palvelimista tai virtuaalikone
 Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
 
 \begin{itemize}
-\item Resurssien käytön hallinta (engl. \textit{resource limit control}): Muisti- ja suoritinresurssien minimi- ja maksimimäärän asettamisen konttikohtaisesti.
-\item Aikataulutus (engl. \textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri nodejen välillä.
+\item Resurssien käyttörajojen hallinta (engl. \textit{resource limit control}): Muisti- ja suoritinresurssien minimi- ja maksimimäärän asettamisen konttikohtaisesti.
+\item Vuoronvalvonta (engl. \textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri nodejen välillä.
 \item Kuormituksen tasapainottaminen (engl. \textit{load balancing}): Kuormituksen jakaminen useiden konttien välillä. 
 \item Terveystarkastus (engl. \textit{health check}): Konttien toimivuuden tarkastus ja viallisiin kontteihin reagointi.
 \item Vikasietoisuus (engl. \textit{fault tolerance}): Automaattinen uusien konttien luonti ja viallisten tuhoaminen virhetilanteissa.
