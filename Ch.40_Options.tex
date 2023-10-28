@@ -6,7 +6,7 @@ Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin niin sanottu
 
 \section{Virtuaalikoneet}
 
-Virtualisaatiolla tarkoitetaan fyysisen laitteen tai resurssin toteuttamista virtuaalisessa muodossa.
+Virtualisoinnilla tarkoitetaan fyysisen laitteen tai resurssin toteuttamista virtuaalisessa muodossa.
 Kokonaista virtualisoitua käyttöjärjestelmää kutsutaan virtuaalikoneeksi.
 Virtuaalikoneiden avulla yksittäisen fyysisen palvelimen resurssit voidaan jakaa useamman virtuaalisen käyttöjärjestelmän välillä \cite{Smith05}.
 Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (engl. hypervisor, virtual machine monitor), joka huolehtii fyysisen palvelimen resurssien abstrahoinnista ja virtuaalikoneiden hallinnoinnista \cite{desai13}.
@@ -21,6 +21,11 @@ Virtuaalikoneiden rakenteelliset erot kontteihin nähden mahdollistavat kuitenki
 % No orchestration
 
 \section{Fyysiset palvelimet}
+
+Virtualisointi, sekä virtuaalikoneiden, että konttien muodossa tarjoaa etuja monissa ohjelmistotuotannon tilanteissa.
+Julkaisuratkaisuna voidaan kuitenkin käyttää myös palvelun suorittamista suoraan fyysisellä laitteistolla.
+Tämän kaltainen perinteinen julkaisutapa on suorituskyvyltään tehokkain ratkaisu, jonka vuoksi sitä käytetään varsinkin sulautettujen järjestelmien osalta \cite{Heiser08}.
+Julkaisutapa ei sovellu DevOps-toimintamallin mukaiseen ohjelmistokehitykseen muun muassa luvussa \ref{orchestration:devops} käsiteltyjen etujen menettämisen vuoksi, joten julkaisutapaa ei käsitellä enempää tässä tutkielmassa.
 
 % bare metal
 % downsides, simplicity and security benefits
