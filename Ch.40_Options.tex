@@ -1,6 +1,20 @@
 \chapter{Muut vaihtoehdot\label{options}}
 
+Konttiteknologian ja konttien orkestraation lisäksi käytössä on muita julkaisutapoja. Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
+Sekä konttien, että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestraatioalustan sijaan erilaisia pilvialustoja \cite{Bousselmi14}.
+Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin niin sanottuihin Serverless-ratkaisuihin \cite{Baldini17}.
+
 \section{Virtuaalikoneet}
+
+Virtualisaatiolla tarkoitetaan fyysisen laitteen tai resurssin toteuttamista virtuaalisessa muodossa.
+Kokonaista virtualisoitua käyttöjärjestelmää kutsutaan virtuaalikoneeksi.
+Virtuaalikoneiden avulla yksittäisen fyysisen palvelimen resurssit voidaan jakaa useamman virtuaalisen käyttöjärjestelmän välillä \cite{Smith05}.
+Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (engl. hypervisor, virtual machine monitor), joka huolehtii fyysisen palvelimen resurssien abstrahoinnista ja virtuaalikoneiden hallinnoinnista \cite{desai13}.
+
+Virtuaalikoneet mahdollistavat konttien tapaan palvelimesta erillisen toistettavan ympäristön.
+Kuvassa \ref{fig:container} esitetään virtuaalikonejulkaisun rakenne.
+Luvussa \ref{container} todettiin, että kontti on kokonsa ja käynnistysnopeutensa suhteen virtuaalikoneita tehokkaampi ratkaisu.
+Virtuaalikoneiden rakenteelliset erot kontteihin nähden mahdollistavat kuitenkin paremman tietoturvan \cite{Sultan19}.
 
 % What are VMs?
 % Benefits, downsides, security
@@ -12,8 +26,11 @@
 % downsides, simplicity and security benefits
 % performance?
 
-\section{Pilvialustat ja serverless}
+\section{Pilvialustat}
 
 % Cloud services etc.
 % Can orchestrate VMs, containers, bare metal
+
+\section{Serverless}
+% Own Section?
 % Serverless, new thing, acually containerized?
