@@ -9,7 +9,7 @@ Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin niin sanottu
 Virtualisoinnilla tarkoitetaan fyysisen laitteen tai resurssin toteuttamista virtuaalisessa muodossa.
 Kokonaista virtualisoitua käyttöjärjestelmää kutsutaan virtuaalikoneeksi.
 Virtuaalikoneiden avulla yksittäisen fyysisen palvelimen resurssit voidaan jakaa useamman virtuaalisen käyttöjärjestelmän välillä \cite{Smith05}.
-Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (engl. hypervisor, virtual machine monitor), joka huolehtii fyysisen palvelimen resurssien abstrahoinnista ja virtuaalikoneiden hallinnoinnista \cite{desai13}.
+Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (engl. \textit{hypervisor}, \textit{virtual machine monitor}), joka huolehtii fyysisen palvelimen resurssien abstrahoinnista ja virtuaalikoneiden hallinnoinnista \cite{desai13}.
 
 Virtuaalikoneet mahdollistavat konttien tapaan palvelimesta erillisen toistettavan ympäristön.
 Kuvassa \ref{fig:container} esitetään virtuaalikonejulkaisun rakenne.
@@ -31,11 +31,20 @@ Julkaisutapa ei sovellu DevOps-toimintamallin mukaiseen ohjelmistokehitykseen mu
 % downsides, simplicity and security benefits
 % performance?
 
-\section{Pilvialustat}
+\section{Pilvialustat ja Serverless}
+
+Pilvialustojen käytöllä viitataan palvelun tai sen osan toteuttamiseen ulkoisen palveluntarjoajan järjestelmien avulla.
+Pilvialustan käytöllä monia ohjelmistontuotannon ja DevOps-toimintallin vaiheita voidaan tarvittaessa ulkoistaa pilvialustan vastuulle \cite{tomarchio20}.
+Erilaisia pilvialustoja on paljon ja niiden toimintatavat ja tarjoamat palvelut vaihtelevat laajalti.
+Tämän vuoksi tässä tutkielmassa pilvialustoja käsitellään käytännön esimerkkinä toimivan \textit{Google Cloud Platform}:in (GCP) kautta, joka on laajalti käytetty ja tarjoaa kattavan määrän erilaisia pilvialustoille ominaisia palveluita \cite{ahuja20}.
+
+GCP tarjoaa muun muassa fyysisiä palvelimia, tallennustilaa, virtuaalikoneita, tietokantoja ja Kubernetes-klustereita \cite{Products23}.
+Näin ollen kaikki aiemmin käsitellyt julkaisutavat sekä konttien orkestrointiin perustuvat ratkaisut voidaan toteuttaa pilvialustan avulla.
+
+GCP tarjoaa myös Serverless-ratkaisuna \textit{Cloud Run} nimisen konttien suoritusympäristön, joka tavoitteena on poistaa kaikki tarve ohjelmistoinfrastruktuurin hallinnoinnille \cite{Products23}.
+Serverless tarkoittaa pilvialustan infrastruktuurin piilottamista käyttäjältä ja palveluiden automaattista skaalaamista käyttömäärän mukaisesti.
+Tämä mahdollistaa laskutuksen käyttömäärän perusteella, kun taas muut pilvialustapalvelut aiheuttavat usein jatkuvia kustannuksia \cite{shafiei22}.
 
 % Cloud services etc.
 % Can orchestrate VMs, containers, bare metal
-
-\section{Serverless}
-% Own Section?
 % Serverless, new thing, acually containerized?
