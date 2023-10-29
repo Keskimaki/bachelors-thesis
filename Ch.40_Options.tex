@@ -1,8 +1,11 @@
 \chapter{Muut vaihtoehdot\label{options}}
 
 Konttiteknologian ja konttien orkestraation lisäksi käytössä on muita julkaisutapoja. Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
-Sekä konttien, että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestraatioalustan sijaan erilaisia pilvialustoja \cite{Bousselmi14}.
+Sekä konttien, että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestraatioalustan sijaan tai lisäksi erilaisia pilvialustoja \cite{Bousselmi14}.
 Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin niin sanottuihin Serverless-ratkaisuihin \cite{Baldini17}.
+
+Käsiteltävät vaihtoehdot jaetaan tässä tutkielmassa julkaisutapoihin, joita ovat kuvassa \ref{fig:container} esitetyt fyysiselle palvelimelle julkaisu sekä virtuaalikone- ja konttipohjaiset julkaisut.
+Julkaisutapojen lisäksi käsitellään erilaisia orkestrointiratkaisuja konttien orkestroinnin ja pilvialustojen tarjoamien palveluiden muodossa.
 
 \section{Virtuaalikoneet}
 
@@ -24,8 +27,8 @@ Virtuaalikoneiden rakenteelliset erot kontteihin nähden mahdollistavat kuitenki
 
 Virtualisointi, sekä virtuaalikoneiden, että konttien muodossa tarjoaa etuja monissa ohjelmistotuotannon tilanteissa.
 Julkaisuratkaisuna voidaan kuitenkin käyttää myös palvelun suorittamista suoraan fyysisellä laitteistolla.
-Tämän kaltainen perinteinen julkaisutapa on suorituskyvyltään tehokkain ratkaisu, jonka vuoksi sitä käytetään varsinkin sulautettujen järjestelmien osalta \cite{Heiser08}.
-Julkaisutapa ei sovellu DevOps-toimintamallin mukaiseen ohjelmistokehitykseen muun muassa luvussa \ref{orchestration:devops} käsiteltyjen etujen menettämisen vuoksi, joten julkaisutapaa ei käsitellä enempää tässä tutkielmassa.
+Tämän kaltainen perinteinen julkaisutapa on suorituskyvyltään tehokkain ratkaisu, jonka vuoksi sitä käytetään varsinkin sulatetuissa järjestelmissä \cite{Heiser08}.
+Julkaisutapa ei sovellu hyvin DevOps-toimintamallin mukaiseen ohjelmistokehitykseen muun muassa luvussa \ref{orchestration:devops} käsiteltyjen etujen menettämisen vuoksi, joten julkaisutapaa ei käsitellä tässä tutkielmassa enempää.
 
 % bare metal
 % downsides, simplicity and security benefits
@@ -40,7 +43,7 @@ Tämän vuoksi tässä tutkielmassa pilvialustoja käsitellään käytännön es
 
 GCP tarjoaa muun muassa fyysisiä palvelimia, tallennustilaa, virtuaalikoneita, tietokantoja ja Kubernetes-klustereita \cite{Products23}.
 Näin ollen kaikki aiemmin käsitellyt julkaisutavat sekä konttien orkestrointiin perustuvat ratkaisut voidaan toteuttaa pilvialustan avulla.
-Pilvialustan käyttö ei siis ole myös konttiorkestraatioalustan käyttöä poissulkeva ratkaisu.
+Pilvialustan käyttö ei siis ole sen lisäksi myös konttiorkestraatioalustan käyttöä poissulkeva ratkaisu.
 
 GCP tarjoaa myös Serverless-ratkaisuna \textit{Cloud Run} nimisen konttien suoritusympäristön, joka tavoitteena on poistaa kaikki tarve ohjelmistoinfrastruktuurin hallinnoinnille \cite{Products23}.
 Serverless tarkoittaa pilvialustan infrastruktuurin piilottamista käyttäjältä ja palveluiden automaattista skaalaamista käyttömäärän mukaisesti.
