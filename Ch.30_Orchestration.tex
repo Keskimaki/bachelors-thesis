@@ -25,12 +25,10 @@ Docker on suosittu ratkaisu, mutta vaatii toimiakseen aina käynnissä olevan pa
 Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillistä palveluprosessia ja root-oikeuksia \cite{Gantikow20}.
 Konttien suoritysympäristöjä ovat muun muassa containerd ja CRI-O, joiden vaikutus palvelun suorituskykyyn on hyvin vähäinen \cite{torrez19, espe20}.
 
-\pagebreak % remove later if possible
-
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/container_evolution.png}
-\caption{Sovelluksen omat ja jaetut resurssit eri julkaisutavoilla.\cite{Kubernetes23}\label{fig:container}}
+\caption{Sovelluksen omat ja jaetut resurssit eri julkaisutavoilla \cite{Kubernetes23}\label{fig:container}.}
 \end{center}
 \end{figure}
 
@@ -60,14 +58,17 @@ Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
 \item Automaattinen skaalautuminen (engl. \textit{auto-scaling}): Konttien lisääminen tai poistaminen automaattisesti kuormituksen mukaan.
 \end{itemize}
 
-%Kuva \ref{fig:kubernetes} kuvaa Kuberneteksen palveluarkkitehtuuria.
+Kuva \ref{fig:kubernetes} esittää Kuberneteksen eri komponentit. Kubernetes-klusteri koostuu useasta podeja suorittavista nodeista.
+Koko klusteria hallinnoi \textit{Control Plane}, joka sisältää klusterin hallinnointiin käytetyn REST-rajapinnan, podien jakautumisesta nodejen välillä huolehtivan vuorontajan sekä pysyväistallennetun avainarvosäilön.
+Näiden lisäksi \textit{Control Plane} sisältää useita \textit{Controller manager}-prosesseja, jotka hallinnoivat eri resursseja.
+Erityisesti \textit{Cloud controller manager} on komponentti, joka mahdollistaa Kubernetes-klusterin yhdistämisen eri pilvialustojen rajapintojen kanssa \cite{components23}.
 
-%\begin{figure}[ht]
-%\begin{center}
-%\includegraphics[width=0.9\textwidth]{figures/kubernetes_architecture.png}
-%\caption{Kuberneteksen palveluarkkitehtuuri.\cite{Spaleta19}\label{fig:kubernetes}}
-%\end{center}
-%\end{figure}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=1\textwidth]{figures/kubernetes_components.png}
+\caption{Kuberneteksen komponentit \cite{components23}\label{fig:kubernetes}.}
+\end{center}
+\end{figure}
 
 \section{Konttien orkestrointi ja DevOps-toimintamalli\label{orchestration:devops}}
 
