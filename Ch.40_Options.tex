@@ -16,14 +16,13 @@ Virtuaalikoneiden avulla yksittäisen fyysisen palvelimen resurssit voidaan jaka
 Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (engl. \textit{hypervisor}, \textit{virtual machine monitor}), joka huolehtii fyysisen palvelimen resurssien abstrahoinnista ja virtuaalikoneiden hallinnoinnista \cite{desai13}.
 
 Konttiteknologia on käyttöjärjestelmätason virtualisointia, kun taas virtuaalikoneet ovat laitteistotason virtualisointia \cite{}.
-
 Virtuaalikoneet mahdollistavat konttien tapaan palvelimesta erillisen toistettavan ympäristön.
 Kuvassa \ref{fig:container} esitetään virtuaalikonejulkaisun rakenne.
 Virtuaalikoneiden erilliset käyttöjärjestelmät luovat paremman isolaation, jonka vuoksi virtuaalikoneet tarjoavat kontteja paremman tietoturvan \cite{Sultan19}.
 Erillisistä käyttöjärjestelmistä johtuen kuitenkin kuten luvussa \ref{container} todettiin, niin kontti on kokonsa ja käynnistysnopeutensa suhteen virtuaalikoneita tehokkaampi ratkaisu.
 
 Virtuaalikoneet voivat olla kontteja sopivampi julkaisuratkaisu varsinkin tietoturvan kannalta kriittisissä tilanteissa.
-Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows ja macOS pohjaisia virtuaalikoneita, kun taas konttiteknologiat on kehitetty Linux-pohjaisille järjestelmille \cite{}.
+Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows ja macOS pohjaisia virtuaalikoneita, kun taas konttiteknologiat on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{}.
 Virtuaalikoneiden kontteja suuremmat resurssikustannukset kuitenkin tekevät niistä selvästi huonommin soveltuvia konttiorkestraatioalustojen kaltaisiin ratkaisuihin.
 Useat pilvialustat tarjoavat virtuaalikoneille konttien orkestrointia vastaavia palveluita, mutta Kuberneteksen kaltaista vakintuunutta ja yhtä kattavaa järjestelmää ei ole kehitetty \cite{}.
 
@@ -51,12 +50,23 @@ Näin ollen kaikki aiemmin käsitellyt julkaisutavat sekä konttien orkestrointi
 Pilvialustan käyttö ei siis ole myös konttiorkestraatioalustan käyttöä poissulkeva ratkaisu.
 Luvussa \ref{platforms} mainittu Kuberneteksen \textit{Cloud controller manager} mahdollistaa pilvialustojen ja konttien orkestroinnin etujen yhdistämisen.
 
+Kuva \ref{fig:architecture} sisältää esimerkkiarkitehtuurin Kubernetes-klusterin ja GCP-pilvialusta tarjoamien palveluiden yhdistämisestä.
+Arkkitehtuuri sisältää luvussa \ref{orchestration} käsitellyt Kubernetes-klusterin osat.
+Pilvialusta taas tarjoaa muun muassa tietoliikenneratkaisun, pysyväistallennustilaa ja klusterin ulkopuolisen kuormituksen tasaajan.
+
+% Cloud services etc.
+% Can orchestrate VMs, containers, bare metal
+% Serverless, new thing, acually containerized?
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=1\textwidth]{figures/gke_architecture.png}
+\caption{Kubernetes-klusteri yhdistettynä GCP:n tarjoamiin palveluihin \cite{cluster23}\label{fig:architecture}.}
+\end{center}
+\end{figure}
+
 GCP tarjoaa myös Serverless-ratkaisuna \textit{Cloud Run} nimisen konttien suoritusympäristön, joka tavoitteena on poistaa kaikki tarve ohjelmistoinfrastruktuurin hallinnoinnille \cite{Products23}.
 Serverless tarkoittaa pilvialustan infrastruktuurin piilottamista käyttäjältä ja palveluiden automaattista skaalaamista käyttömäärän mukaisesti.
 Tämä mahdollistaa laskutuksen käyttömäärän perusteella, kun taas muut pilvialustapalvelut aiheuttavat usein jatkuvia kustannuksia \cite{shafiei22}.
 Serverless-ratkaisut perustuvat yleensä konttiteknologian käyttöön ja niiden haittapuolia ovat ennalta-arvaamaton resurssien käyttö ja hidas käynnistymisaika \cite{shafiei22, mondal22}.
 Myös Serverless-ratkaisuja on mahdollista yhdistää Kubernetes-pohjaisen konttien orkestroinnin kanssa \cite{mondal22}. 
-
-% Cloud services etc.
-% Can orchestrate VMs, containers, bare metal
-% Serverless, new thing, acually containerized?
