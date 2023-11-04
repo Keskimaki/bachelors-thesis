@@ -1,0 +1,71 @@
+\appendix{Diagrammien lähdekoodi\label{appendix:diagram}}
+
+\begin{lstlisting}[title=Kuva \ref{fig:cicd}, captionpos=b]
+graph LR
+    developer[Kehittäjä] --> version[(Versiohallinta)]
+    version --> build
+    test --> review
+
+    subgraph "Jatkuva integraatio"
+        build[Rakennus] --> test[Testaus]
+    end
+
+    subgraph "Jatkuva toimitus"
+        review[Arviointi] --> staging[Testiympäristö]
+        staging --> production[Tuotantoympäristö]
+    end
+\end{lstlisting}
+
+\begin{lstlisting}[title=Kuva \ref{fig:norppa}, captionpos=b]
+graph TB
+    sisu[Sisu export APIs]
+    importer -->|Fetch data| sisu
+
+    server -->|Get IAM access| jami
+    server -->|Send mail| pate
+    updater -->|Fetch data| importer
+
+    updater -->|Write| pg
+    server -->|Read,Write| pg
+
+    subgraph Deployment
+        Developer[Developer] -->|Push| gh
+        gh[(GitHub)] --> gha
+        gha[GitHub Actions] -->|Push image| quay
+        quay[(Quay.io)]
+    end
+
+    subgraph Analytics
+        sentry[Sentry]
+        graylog[Graylog]
+        grafana[Grafana]
+    end
+
+    subgraph Kubernetes
+        control[Control Plane] -->|Fetch image| quay
+
+        control[Control Plane] -->|Deploy, Manage| client
+        control[Control Plane] -->|Deploy, Manage| server
+        control[Control Plane] -->|Deploy, Manage| updater
+
+        control[Control Plane] -->|Deploy, Manage| jami
+        control[Control Plane] -->|Deploy, Manage| pate
+        control[Control Plane] -->|Deploy, Manage| importer
+
+        subgraph Norppa
+
+            subgraph Norppa core
+                client[React app] --> server[NodeJS server]
+            end
+
+            updater[Updater]
+            pg[(Postgres)]
+        end
+
+        subgraph Microservices
+            jami[JAMI]
+            pate[Pate]
+            importer[Importer]
+        end
+    end
+\end{lstlisting}

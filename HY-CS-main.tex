@@ -70,6 +70,9 @@
 %\usepackage{wrapfig}        % For nice text-wrapping figures (use at own discretion)
 \usepackage{amsmath, amssymb} % For better math
 
+ \usepackage{listings} % For code formatting
+\lstset{literate={ä}{{\"a}}1{ö}{{\"o}}1} % ä and ö support
+
 \singlespacing               %line spacing options; normally use single
 
 \fussy
@@ -181,7 +184,7 @@
 \include{Ch.30_Orchestration}
 \include{Ch.40_Options}
 \include{Ch.50_Example}
-\include{Ch.50_Summary}
+\include{Ch.60_Summary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\cleardoublepage                          %fixes the position of bibliography in bookmarks
@@ -193,17 +196,8 @@
 \backmatter
 \begin{appendices}
 
-%% A sample Appendix
-\include{Ch.60_AI}
-%% another appendix
-%\include{instructions/instructions_english}
-%% yet another appendix
-%\include{instructions/instructions_finnish}
-
-% BSc instructions
-%\include{instructions/bsc_finnish_contents}
-%\include{instructions/bsc_english_contents}
-
+\include{Ap.Diagrams}
+\include{Ap.AI}
 
 \end{appendices}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
