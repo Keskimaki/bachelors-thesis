@@ -10,21 +10,25 @@ Vaihtoehtoja ja niiden soveltuvuutta DevOps-toimintamallin mukaiseen ohjelmistot
 
 \section{Virtuaalikoneet}
 
+% Virtuaalikone tarjoaa vahvemman isolaation
+
 Virtualisoinnilla tarkoitetaan fyysisen laitteen tai resurssin toteuttamista virtuaalisessa muodossa.
 Kokonaista virtualisoitua käyttöjärjestelmää kutsutaan virtuaalikoneeksi.
 Virtuaalikoneiden avulla yksittäisen fyysisen palvelimen resurssit voidaan jakaa useamman virtuaalisen käyttöjärjestelmän välillä \cite{Smith05}.
 Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (\textit{hypervisor}, \textit{virtual machine monitor}), joka huolehtii fyysisen palvelimen resurssien abstrahoinnista ja virtuaalikoneiden hallinnoinnista \cite{desai13}.
 
-Konttiteknologia on käyttöjärjestelmätason virtualisointia, kun taas virtuaalikoneet ovat laitteistotason virtualisointia \cite{}.
+Konttiteknologia on käyttöjärjestelmätason virtualisointia, kun taas virtuaalikoneet ovat laitteistotason virtualisointia \cite{Compastie20}.
 Virtuaalikoneet mahdollistavat konttien tapaan palvelimesta erillisen toistettavan ympäristön.
 Kuvassa \ref{fig:container} esitetään virtuaalikonejulkaisun rakenne.
 Virtuaalikoneiden erilliset käyttöjärjestelmät luovat paremman isolaation, jonka vuoksi virtuaalikoneet tarjoavat kontteja paremman tietoturvan \cite{Sultan19}.
 Erillisistä käyttöjärjestelmistä johtuen kuitenkin kuten luvussa \ref{container} todettiin, niin kontti on kokonsa ja käynnistysnopeutensa suhteen virtuaalikoneita tehokkaampi ratkaisu.
 
+% Maybe use https://ieeexplore.ieee.org/abstract/document/9036238
+
 Virtuaalikoneet voivat olla kontteja sopivampi julkaisuratkaisu varsinkin tietoturvan kannalta kriittisissä tilanteissa.
-Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows ja macOS pohjaisia virtuaalikoneita, kun taas konttiteknologiat on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{}.
-Virtuaalikoneiden kontteja suuremmat resurssikustannukset kuitenkin tekevät niistä selvästi huonommin soveltuvia konttiorkestraatioalustojen kaltaisiin ratkaisuihin.
-Useat pilvialustat tarjoavat virtuaalikoneille konttien orkestrointia vastaavia palveluita, mutta Kuberneteksen kaltaista vakintuunutta ja yhtä kattavaa järjestelmää ei ole kehitetty \cite{}.
+Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows ja macOS pohjaisia virtuaalikoneita, kun taas konttiteknologiat on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{Watada19}.
+Virtuaalikoneiden kontteja suuremmat resurssikustannukset kuitenkin tekevät niistä selvästi huonommin soveltuvia konttiorkestrointialustojen kaltaisiin ratkaisuihin.
+Useat pilvialustat tarjoavat virtuaalikoneille konttien orkestrointia vastaavia palveluita, mutta Kuberneteksen kaltaista vakintuunutta ja yhtä kattavaa järjestelmää ei ole kehitetty. % Can't find citation
 
 DevOps-toimintamallin vaiheiden kannalta tietoturva on tärkeintä operointi- ja monitorointivaiheissa, joiden osalta palvelun suoritusympäristönä voi toimia virtuaalikone.
 Konttiteknologiaa voidaan kuitenkin käyttää muissa vaiheissa toimintamallia ja mahdollisesti myös operointi- ja monitorointivaiheissa virtuaalikoneen sisällä.
