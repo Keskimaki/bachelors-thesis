@@ -1,28 +1,29 @@
 \chapter{Käytännön esimerkki\label{example}}
 
 Tutkielmassa on nyt käsitelty DevOps-toimintallia ja sen yhteydessä käytettäviä julkaisutapoja ja orkestrointiratkaisuja.
+Osana tutkielmaa esitetään käytännön esimerkki käsiteltyjen aiheiden käytöstä ohjelmistotuotannossa.
 Helsingin Yliopiston Norppa-palautejärjestelmän kehitys perustuu DevOps-toimintamalliin ja käyttää monia tutkielmassa käsiteltyjä teknologioita.
-Palvelun perustoiminta ja ohjelmistoarkitehtuuri esitellään osana tutkielmaa.
-
+Palvelun perustoiminta ja ohjelmistoarkitehtuuri esitellään tässä luvussa.
 
 \section{Norppa-palautejäjestelmä}
 
 Helsingin yliopiston tietojenkäsittelytieteen osaston sovelluskehitysakatemian (\textit{Toska}) \cite{Tenhunen23} kehittämä kurssipalautejärjestelmä Norppa on tutkielmassa esitetyn DevOps-toimintamallin mukaisessa aktiivisessa kehityksessä.
 Järjestelmää käytetään Helsingin Yliopiston lisäksi myös Tampereen yliopiston kurssipalautejärjestelmänä \cite{Tampere23}.
 
-Norppa on integroity Sisu-opintotietojärjestelmän kanssa. Järjestelmä luo automaattisesti palautelomakkeen ja tiedottaa Sisussa luodun kurssin opiskelijoille palautteesta.
+Norppa on integroitu Sisu-opintotietojärjestelmän kanssa.
+Järjestelmä luo automaattisesti muokattavan palautelomakkeen ja tiedottaa Sisussa luodun kurssin opiskelijoille palautteen aukeamisesta.
 Annetusta palautteesta luodaan yhteenveto, joka näytetään kurssin opiskelijoille ja opettajille.
 Norppa tukee myös mmun muassa avointa tekstuaalista jatkuvaa palautetta ja koulutusohjelma- sekä yliopistotason palautteen yhteenvetonäkymiä.
 
 Järjestelmän on kehittänyt Helsingin Yliopiston Toska-tiimi, mutta jatkokehitystä tehdään yhteistyössä Tampereen yliopiston kanssa.
 Kehitys perustuu avoimeen lähdekoodin ja DevOps-toimintamalliin.
-Seuraavaksi esitellään Norpassa käytetyt tutkielman kannalta merkitykselliset tekniset ratkaisut.
+Seuraavaksi esitellään Norpan kehityksessä ja tuotantokäytössä käytetyt tutkielamn kannalta merkitykselliset ratkaisut.
 
-\section{Käytetyt ratkaisut}
+\section{DevOps-toimintamallin käyttö}
 
 Norppa on avoimen lähdekoodin projekti, jonka lähdekoodi ja versiohistoria säilötään GitHub-alustalla.
 DevOps-toimintamallin mukainen jatkuva integraatio ja toimitus toteutetaan osana versiohallintaa \textit{GitHub Actions}-palvelun avulla.
-Kaikissa toimintamallin vaiheissa käytetään konttiteknologiaa ja orkestrointiratkaisuna toimii Kuberenetekseen perustuva \textit{OpenShift}-alusta.
+Kaikissa toimintamallin vaiheissa käytetään konttiteknologiaa ja orkestrointiratkaisuna toimii Kuberenetekseen perustuva OpenShift-konttialusta.
 
 Kuva \ref{fig:norppa:deployment} esittää Norpan julkaisuputken ja käytetyt analytiikkapalvelut.
 Kehittäjän puskiessa uuden koodimuutoksen versiohallintaan uudesta koodiversiosta rakennetaan automaattisesti kontti, jota vasten suoritetaan testit.
@@ -36,9 +37,31 @@ Uuden koodimuutoksen vieminen tuotantoympäristöön vaatii manuaalisen komennon
 \end{center}
 \end{figure}
 
+Koko julkaisuputki kestää noin viisitoista minuuttia ja mahdollistaa näin useat päivittäiset julkaisut.
+Uusia toiminnallisuuksia tuodaan käyttöön osittain pienten yksittäisten julkaisujen kautta, jonka seurauksena koodimuutoksista saadaan nopeaa palautetta ja mahdollisiin ongelmiin voidaan reagoida nopeasti.
+
+\section{Konttien orkestroinnin käyttö}
+
+Norpan testi- ja tuotantoympäristönä toimii yliopiston OpenShift-konttialusta.
+OpenShift on Kuberneteksen päälle kehittetty konttialusta, joka tarjoaa konttien orkestroinnin lisäksi muun muassa käyttäjähallinnan ja oman graaffisen käyttöliittymänsä \cite{Lossent17}.
+Kuvassa \ref{fig:norppa:deployment} esitetty julkaisuputki ja erillisellä virtuaalikoneella toimivat analytiikkapalvelut sijaitsevat OpenShift-klusterin ulkopuolella.
+
+Kuva \ref{fig:norppa:architecture} esittää Norpan ohjelmistoarkkitehtuurin osana OpenShift-klusteria.
+Norppa koostuu ydinpalvelusta ja siihen liitettävistä erillisistä mikropalveluista.
+Tämä arkkitehtuuriratkaisu mahdollistaa palvelun muokattavuuden.
+Helsingin ja Tampereen yliopistot käyttävät samaa Norpan ydintä, mutta muut palvelut on toteutettu erikseen yliopistojen tarpeiden mukaisesti.
+
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=1\textwidth]{figures/norppa_architecture.png}
-\caption{Norpan julkaisuputki ja analytiikkapalvelut \cite{Norppa23}\label{fig:norppa:deployment}.}
+\caption{Norpan laajennettu arkkitehtuuridiagrammi \cite{Norppa23}\label{fig:norppa:architecture}.}
 \end{center}
 \end{figure}
+
+Norpan ydin muodostuu React pohjaisesta käyttöliittymästä ja NodeJS-palvelimesta.
+Sisusta haetun opintodatan synkronisoinnista huolehtii erillinen Updater-palvelu.
+Tämän lisäksi Norppa käyttää useita myös muiden järjestelmien käyttämiä mikropalveluita, kuten sähköpostipalvelua Pate ja käyttöoikeushallintapalvelua Jami.
+
+Kaikki palvelut sijaitsevat samassa OpenShift-klusterissa, joka mahdollistaa helpon palveluiden välisen kommunikaation.
+OpenShift-klusteri hakee \textit{Quay.io}-konttirekisteristä uuden kontin julkaisun yhteydessä ja huolehtii käytössä olevien konttien päivityksestä.
+Julkaisujen lisäksi klusteri huolehtii \ref{platforms} mukaisesti muun muassa resurssien käyttörajojen hallinnasta ja automaattisesta skaalautumisesta.
