@@ -20,11 +20,19 @@ Seuraavaksi esitellään Norpassa käytetyt tutkielman kannalta merkitykselliset
 
 \section{Käytetyt ratkaisut}
 
+Norppa on avoimen lähdekoodin projekti, jonka lähdekoodi ja versiohistoria säilötään GitHub-alustalla.
+DevOps-toimintamallin mukainen jatkuva integraatio ja toimitus toteutetaan osana versiohallintaa \textit{GitHub Actions}-palvelun avulla.
+Kaikissa toimintamallin vaiheissa käytetään konttiteknologiaa ja orkestrointiratkaisuna toimii Kuberenetekseen perustuva \textit{OpenShift}-alusta.
 
+Kuva \ref{fig:norppa:deployment} esittää Norpan julkaisuputken ja käytetyt analytiikkapalvelut.
+Kehittäjän puskiessa uuden koodimuutoksen versiohallintaan uudesta koodiversiosta rakennetaan automaattisesti kontti, jota vasten suoritetaan testit.
+Testauksen onnistuessa sama kontti pusketaan \textit{Quay.io}-konttirekisteriin, josta se haetaan julkaistavaksi testiympäristöön.
+Uuden koodimuutoksen vieminen tuotantoympäristöön vaatii manuaalisen komennon GitHub-alustalla, jonka seurauksena sama prosessi toistetaan, mutta julkaistu kontti merkitään julkaistavaksi tuotantoympäristöön.
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=1\textwidth]{figures/norppa_diagram.png}
-\caption{Norppa-palautejärjestelmän laajennettu julkaisu- ja arkkitehtuuridiagrammi \cite{Norppa23}\label{fig:norppa}.}
+\includegraphics[width=1\textwidth]{figures/norppa_deployment.png}
+\caption{Norpan julkaisuputki ja analytiikkapalvelut \cite{Norppa23}\label{fig:norppa:deployment}.}
 \end{center}
 \end{figure}
+
