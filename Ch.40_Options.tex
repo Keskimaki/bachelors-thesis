@@ -2,7 +2,7 @@
 
 Konttiteknologian ja konttien orkestraation lisäksi käytössä on muita julkaisutapoja. Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
 Sekä konttien, että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestraatioalustan sijaan tai lisäksi erilaisia pilvialustoja \cite{Bousselmi14}.
-Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin niin sanottuihin Serverless-ratkaisuihin \cite{Baldini17}.
+Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin palvelimettomaan arkkitehtuurin perustuviin ratkaisuihin \cite{Baldini17}.
 
 Käsiteltävät vaihtoehdot jaetaan tässä tutkielmassa julkaisutapoihin, joita ovat kuvassa \ref{fig:container} esitetyt fyysiselle palvelimelle julkaisu sekä virtuaalikone- ja konttipohjaiset julkaisut.
 Julkaisutapojen lisäksi käsitellään erilaisia orkestrointiratkaisuja konttien orkestroinnin ja pilvialustojen tarjoamien palveluiden muodossa.
@@ -38,7 +38,7 @@ Tämän kaltainen perinteinen julkaisutapa on suorituskyvyltään ja tilavaatimu
 Virtualisaatio varsinkin konttiteknologian osalta ei kuitenkaan aiheuta merkittäviä kustannuksia \cite{torrez19}
 Julkaisutapa ei sovellu hyvin DevOps-toimintamallin mukaiseen ohjelmistokehitykseen muun muassa luvussa \ref{orchestration:devops} käsiteltyjen etujen menettämisen vuoksi, joten julkaisutapaa ei käsitellä enempää tutkielmassa.
 
-\section{Pilvialustat ja Serverless}
+\section{Pilvialustat ja palvelimeton arkkitehtuuri}
 
 Pilvialustojen käytöllä viitataan palvelun tai sen osan toteuttamiseen ulkoisen palveluntarjoajan järjestelmien avulla.
 Pilvialustan käytöllä monia ohjelmistontuotannon ja DevOps-toimintallin vaiheita voidaan tarvittaessa ulkoistaa pilvialustan vastuulle \cite{tomarchio20}.
@@ -65,11 +65,11 @@ Pilvialusta taas tarjoaa muun muassa tietoliikenneratkaisun, pysyväistallennust
 \end{center}
 \end{figure}
 
-GCP tarjoaa myös Serverless-ratkaisuna \textit{Cloud Run} nimisen konttien suoritusympäristön, joka tavoitteena on poistaa kaikki tarve ohjelmistoinfrastruktuurin hallinnoinnille \cite{Products23}.
-Serverless tarkoittaa pilvialustan infrastruktuurin piilottamista käyttäjältä ja palveluiden automaattista skaalaamista käyttömäärän mukaisesti.
+GCP tarjoaa myös palvelimettomaan arkkitehtuuriin (\textit{Serverless}) perustuvana ratkaisuna \textit{Cloud Run} nimisen konttien suoritusympäristön, jonka tavoitteena on poistaa kaikki tarve ohjelmistoinfrastruktuurin hallinnoinnille \cite{Products23}.
+Palvelimeton arkkitehtuuri tarkoittaa pilvialustan infrastruktuurin piilottamista käyttäjältä ja palveluiden automaattista skaalaamista käyttömäärän mukaisesti.
 Tämä mahdollistaa laskutuksen käyttömäärän perusteella, kun taas muut pilvialustapalvelut aiheuttavat usein jatkuvia kustannuksia \cite{shafiei22}.
-Serverless-ratkaisut perustuvat yleensä konttiteknologian käyttöön ja niiden haittapuolia ovat ennalta-arvaamaton resurssien käyttö ja hidas käynnistymisaika \cite{shafiei22, mondal22}.
-Myös Serverless-ratkaisuja on mahdollista yhdistää Kubernetes-pohjaisen konttien orkestroinnin kanssa \cite{mondal22}. 
+Palvelimettomaan arkkitehtuuriin perustuvat ratkaisut pohjautuvat yleensä konttiteknologian käyttöön ja niiden haittapuolia ovat ennalta-arvaamaton resurssien käyttö ja hidas käynnistymisaika \cite{shafiei22, mondal22}.
+Myös palvelimeton arkkitehtuuri on mahdollista yhdistää Kubernetes-pohjaisen konttien orkestroinnin kanssa \cite{mondal22}. 
 
 DevOps-toimintamallin kannalta pilvialustat yksinkertaistavat tarvittavien palveluiden, kuten CI/CD-palvelimien käyttöä.
 Pilvialustoihin voi kuitenkin liittyä esimerkiksi lainsäädännöllisiä ongelmia muun muassa käyttäjätietojen säilömisen osalta \cite{Barati22}.
