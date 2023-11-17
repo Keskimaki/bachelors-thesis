@@ -34,10 +34,11 @@ DevOps-toimintamallin vaiheet ja niistä käytetyt termit vaihtelevat lähteest�
 
 \section{Jatkuva integraatio ja toimitus}
 
-Jatkuva integraatio ja toimitus (\textit{continuous integration and continuous deployment, CI/CD}) on keskeinen osa DevOps-toimintamallia \cite{Jabbari16, Leite19}. Jatkossa tutkielmassa käsitteisiin viitataan vakiintuneilla lyhenteillä CI ja CD.
+Jatkuva integraatio ja toimitus (\textit{continuous integration and continuous deployment, CI/CD}) on keskeinen osa DevOps-toimintamallia \cite{Jabbari16, Leite19}.
+Jatkossa tutkielmassa käsitteisiin viitataan vakiintuneilla lyhenteillä CI ja CD.
 
-CI viittaa koodimuutosten vientiin versionhallintaan nopealla tahdilla ja muutosten automaattiseen testaukseen sen yhteydessä.
-CD taas tarkoittaa CI:n seurauksena validoidun koodin automaattista julkaisua tuotantoympäristöön tai sitä muistuttavaan testiympäristöön \cite{Shahin17}.
+CI tarkoittaa koodimuutosten vientiä versionhallintaan nopealla tahdilla ja muutosten automaattista testausta koodimuutosten jälkeen.
+CD taas tarkoittaa CI:n jälkeen tapahtuvaa koodin automaattista julkaisua tuotantoympäristöön tai sitä muistuttavaan testiympäristöön \cite{Shahin17}.
 CI/CD mahdollistaa näin tehokkaan laadunvalvonnan ja ohjelmiston nopean julkaisusyklin.
 
 \begin{figure}[ht]
@@ -47,7 +48,7 @@ CI/CD mahdollistaa näin tehokkaan laadunvalvonnan ja ohjelmiston nopean julkais
 \end{center}
 \end{figure}
 
-Kuva \ref{fig:cicd} esittää esimerkin mahdollisesta CI/CD-putkesta. CI/CD käynnistyy kehittäjän puskiessa uuden koodimuutoksen versiohallintaan.
+Kuva \ref{fig:cicd} esittää esimerkin mahdollisesta CI/CD-putkesta. CI/CD käynnistyy kehittäjän viedessä uuden koodimuutoksen versiohallintaan.
 CI:n aikana uusi version sovelluksesta rakennetaan päivitetystä koodista ja uudelle versiolle suoritetaan automaattiset testit.
 Automaattiset testit läpäissyt koodi voidaan tarvittaessa katselmoida ja sovelluksen uusi versio julkaistaan vaiheittain testi- ja tuotantoympäristöihin osana CD:tä.
 
@@ -60,6 +61,9 @@ Myös DevOps-toimintamallin käyttöönotto sekä toimintamallin seurannan laadu
 Haasteissa painottuvat erityisesti inhimilliset tekijät kuten kommunikaatiohaasteet ja muutosvastarinta \cite{Kalliosaari16}.
 Teknisen puolen haasteita ovat taas ohjelmistoinfrastruktuurin hallinta, kuten monimutkaiset kehitys- ja tuotantoympäristöt \cite{Khan22, Kalliosaari16}.
 
+% Tässä tutkielmassa keskitytään DevOps-toimintamallin teknisiin haasteisiin.
+% CI/CD-putken toteutus ja 
+
 DevOps-toimintamallin käyttöönoton yhteydessä on arvioitava erilaisten teknologioiden soveltuvuuttaa osaksi mallin mukaista ohjelmistotuotantoa.
 Sopivilla teknologiavalinnoilla voidaan vähentää ohjelmistoinfrastruktuurin monimutkaisuutta.
 Yksi näistä teknologiavalinnoista on julkaisutavan valinta.
@@ -67,4 +71,4 @@ Automaation ja toistettavuuden kannalta ratkaisuksi sopisi esimerkiksi virtuaali
 Konttiteknologiaa ja konttien orkestrointia voidaan käyttää onnistuneesti osana DevOps-toimintamallia \cite{Kang16, Narasimhulu23}.
 Seuraavaksi käsitellään näitä aiheita ja arvioidaan niiden yhteensopivuuttaa DevOps-toimintamallin kanssa.
 
-% Expand into more challenges and especially benefits e.g. Why should the reader or anyone use DevOps
+% Propbably need to rethink this section somewhat, check the email

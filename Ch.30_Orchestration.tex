@@ -1,7 +1,7 @@
 \chapter{Konttien orkestrointi\label{orchestration}}
 
-Konttiteknologiaa käytetään kasvavissa määrissä monilla ohjelmistotuotannon osa-alueilla.
-Konttiteknologia mahdollistaa fyysisen palvelimen tai ohjelmistökehittäjän tietokoneen suoritusympäristöstä eroavan vakaan ja rajattomasti toistettavan ympäristön \cite{Watada19}.
+Konttiteknologiaa ja konttien orkestrointia käytetään monilla ohjelmistotuotannon osa-alueilla.
+Konttiteknologia mahdollistaa fyysisen palvelimen tai ohjelmistökehittäjän tietokoneen suoritusympäristöstä eroavan vakaan ja toistettavan ympäristön \cite{Watada19}.
 Konttiteknologian kasvava käyttö on luonut tarpeen hallinnoida suuria määriä kontteja samanaikaisesti.
 Tähän tarpeeseen pyrkivät vastaamaan erilaiset konttiorkestraatioalustat.
 
@@ -18,41 +18,45 @@ Kontti on riippumaton fyysisestä palvelimesta ja sen ulkopuolisestä ympärist�
 
 Virtuaalikonejulkaisuista poiketen useampi kontti voi jakaa resursseja ja näin ollen esimerkiksi käyttöjärjestelmän ydintä ei tarvitse säilöä erikseen jokaiseen konttiin.
 Tämän seurauksena kontit ovat kokonsa ja käynnistysnopeutensa suhteen virtuaalikoneita tehokkaampi ratkaisu \cite{Dua14}.
-Kuva~\ref{fig:container} esittää resurssien jaon eri julkaisuratkaisuilla.
+
+% Kuva~\ref{fig:container} esittää resurssien jaon eri julkaisuratkaisuilla.
+% Konttijulkaisussa useampi erillisissä konteissa suoritettava sovellus käyttää samaa käyttöjärjestelmän ydintä ja konttien suoritusympäristöä.
+% Virtuaalikoneiden ja perinteisten 
 
 Yleisesti käytettyjä konttiteknologiapalveluita ovat Docker ja Podman \cite{Abraham20, Bernstein14}.
 Docker on suosittu ratkaisu, mutta vaatii toimiakseen aina käynnissä olevan palveluprosessin ja root-oikeudet palvelua suorittavaan käyttöjärjestelmään \cite{Abraham20}.
 Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillistä palveluprosessia ja root-oikeuksia \cite{Gantikow20}.
-Konttien suoritysympäristöjä ovat muun muassa containerd ja CRI-O, joiden vaikutus palvelun suorituskykyyn on hyvin vähäinen \cite{torrez19, espe20}.
+Konttiteknologiapalveluiden käyttämiä konttien suoritysympäristöjä (\textit{container runtime}) ovat muun muassa containerd ja CRI-O.
+Konttien suoristusympäristöjen vaikutus palvelun suorituskykyyn suoraan palvelimelle julkaisemiseen verrrattuna on hyvin vähäinen \cite{torrez19, espe20}.
 
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=0.9\textwidth]{figures/container_evolution.png}
-\caption{Sovelluksen omat ja jaetut resurssit eri julkaisutavoilla \cite{Kubernetes23}\label{fig:container}.}
-\end{center}
-\end{figure}
+% \begin{figure}[ht]
+% \begin{center}
+% \includegraphics[width=0.9\textwidth]{figures/container_evolution.png}
+% \caption{Sovelluksen omat ja jaetut resurssit eri julkaisutavoilla \cite{Kubernetes23}\label{fig:container}.}
+% \end{center}
+% \end{figure}
 
 \section{Konttiorkestraatioalustat\label{platforms}}
 
 Erityisesti mikropalvelupohjaiset järjestelmät saattavat koostua useista sadoista konteista.
 Myös muun muassa saman palvelun replikaatio ja alueellinen hajauttaminen luovat tarpeen hallinnoida suuria määriä kontteja \cite{Khan17}.
 Konttiorkestraatioalustat ovat järjestelmiä, joiden tehtävä on mahdollistaa suurien konttimäärien hallinnointi.
-Orkestraatioalustat muun muassa hallinnoivat konttien resurssien käyttöä, mahdollistavat konttien monitoroinnin ja huolehtivat konttien virhetilanteista toipumisesta \cite{Zhou21}.
+Orkestraatioalustat hallinnoivat konttien resurssien käyttöä, mahdollistavat konttien monitoroinnin ja huolehtivat konttien virhetilanteista toipumisesta \cite{Zhou21}.
 
 Kubernetes on laajalti käytetty konttiorkestraatioratkaisu.
 Se on nykyisistä ratkaisuista suorituskyvyltään tehokkain ja myös toiminnallisuuksiltaan kattavin \cite{Jawarneh19}.
 Muita ratkaisuja ovat muun muassa Docker Swarm ja Amazon Elastic Container Service \cite{Khan17}.
 Tässä tutkielmassa konttien orkestrointia käsitellään pääasiassa Kuberneteksen kautta.
 
-Kubernetes on alkujaan Googlen kehittämä ja nykyään Linux Foundationin alla toimivan Cloud Native Foundationin hallinnoima avoimen lähdekoodin projekti \cite{Burns22}.
+Kubernetes on alkujaan Googlen kehittämä ja nykyään \textit{Linux Foundation}:in osana toimivan \textit{Cloud Native Foundation}:in hallinnoima avoimen lähdekoodin projekti \cite{Burns22}.
 Kubernetes hallinnoi podeiksi kutsuttuja yhdestä tai useammasta kontista koostuvia kokonaisuuksia.
-Kubernetes-klusteri muodostuu useista fyysisistä palvelimista tai virtuaalikoneista, joita kutsutaan nodeiksi \cite{Medel18}.
+Kubernetes-klusteri muodostuu useista fyysisistä palvelimista tai virtuaalikoneista, joita kutsutaan solmuiksi (\textit{node}) \cite{Medel18}.
 Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
 
 \begin{itemize}
 \item Resurssien käyttörajojen hallinta (\textit{resource limit control}): Muisti- ja suoritinresurssien minimi- ja maksimimäärän asettamisen konttikohtaisesti.
-\item Vuoronvalvonta (\textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri nodejen välillä.
-\item Kuormituksen tasaaminen (\textit{load balancing}): Kuormituksen jakaminen useiden konttien välillä. 
+\item Vuoronvalvonta (\textit{scheduling}): Konttien automaattinen ja optimoitu sijoitus eri solmujen välillä.
+\item Kuormituksen tasaaminen (\textit{load balancing}): Kuormituksen jakaminen useiden saman palvelun konttien välillä. 
 \item Terveystarkastus (\textit{health check}): Konttien toimivuuden tarkastus ja viallisiin kontteihin reagointi.
 \item Vikasietoisuus (\textit{fault tolerance}): Automaattinen uusien konttien luonti ja viallisten tuhoaminen virhetilanteissa.
 \item Automaattinen skaalautuminen (\textit{auto-scaling}): Konttien lisääminen tai poistaminen automaattisesti kuormituksen mukaan.
@@ -73,7 +77,7 @@ Erityisesti \textit{Cloud controller manager} on komponentti, joka mahdollistaa 
 \section{Konttien orkestrointi DevOps-toimintamallissa\label{orchestration:devops}}
 
 Konttiteknologiaa ja konttien orkestrointia käytetään usein osana DevOps-toimintamalliin perustuvaa ohjelmistotuotantoa \cite{Kang16, Narasimhulu23}.
-Konttiteknologia avulla samaa kontitettua palvelua voi siirtää eri ympäristöjen välillä.
+Konttiteknologia avulla kontitettua palvelua voi siirtää eri ympäristöjen välillä.
 Konttiteknologia mahdollistaa myös koko palvelun ympäristön konfiguroinnin ja näin ennustettavamman toiminnan ja helpomman vianmäärityksen \cite{Narasimhulu23}.
 
 Kontin siirrettävyys mahdollistaa tehokkaan varmennus- sekä julkaisuvaiheen DevOps-toimintamallissa, koska samaa konttia voidaan ensin käyttää testauksessa ja sen jälkeen siirtä se esimerkiksi julkaisualustana toimivalle konttiorkestraatioalustalle.
@@ -85,8 +89,8 @@ Resurssien käytön hallinta, aikataulutus, kuormituksen tasapainottaminen ja au
 Terveystarkastus ja vikasietoisuus taas tukevat monitorointia.
 Konttiorkestraatioalustan käyttö myös itsessään mahdollistaa konttiteknologian käytön palvelun julkaisuratkaisuna, joka tekee saman kontin käytöstä testauksessa ja tuotantokäytössä mahdollista.
 
-% Maybe show an example of a DevOps based Container orchestration flow
-
 Konttiteknologian ja konttien orkestroinnin käytöstä osana DevOps-toimintamallia on löytynyt paljon etuja.
 Seuraavaksi tarkoituksena on tarkastella muita julkaisutapoja ja niiden soveltuvuutta DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
 Näitä julkaisutapoja verrataan myös konttiteknologian ja konttien orkestraation käyttöön.
+
+% Decent stuff, but this can be made more explicit, less listlike, see email
