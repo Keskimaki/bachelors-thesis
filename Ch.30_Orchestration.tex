@@ -2,17 +2,9 @@
 
 Konttiteknologiaa ja konttien orkestrointia käytetään monilla ohjelmistotuotannon osa-alueilla.
 Konttiteknologia mahdollistaa fyysisen palvelimen tai ohjelmistökehittäjän tietokoneen suoritusympäristöstä eroavan vakaan ja toistettavan ympäristön \cite{Watada19}.
-Konttiteknologian kasvava käyttö on luonut tarpeen hallinnoida suuria määriä kontteja samanaikaisesti.
-Tähän tarpeeseen pyrkivät vastaamaan erilaiset konttiorkestrointialustat.
-
-konttiorkestrointialustat hallinnoivat suuria määriä kontteja jaetussa klusterissa.
-konttiorkestrointialustat, kuten Kubernetes, mahdollistavat muun muassa palveluiden replikoinnin, tehokkaan julkaisuketjun, kontitettujen palveluiden monitoroinnin ja virhetiloista toipumisen \cite{Khan17}.
-
-% Ingress and introduction have same text, fix
+Konttiorkestrointialustat hallinnoivat suuria määriä kontteja jaetussa klusterissa mahdollistaen palveluiden replikoinnin, tehokkaan julkaisuketjun, kontitettujen palveluiden monitoroinnin ja virhetiloista toipumisen \cite{Khan17}.
 
 \section{Kontti\label{container}}
-
-% Maybe add something about container runtimes here?
 
 Kontti on karsittu ympäristö, joka koostuu palvelusta ja sen tarvitsemista riippuvuuksista.
 Kontti tarjoaa vakaan ja suljetun ympäristön palvelun suorittamiselle \cite{Watada19}.
@@ -21,22 +13,11 @@ Kontti on riippumaton fyysisestä palvelimesta ja sen ulkopuolisestä ympärist�
 Virtuaalikonejulkaisuista poiketen useampi kontti voi jakaa resursseja ja näin ollen esimerkiksi käyttöjärjestelmän ydintä ei tarvitse säilöä erikseen jokaiseen konttiin.
 Tämän seurauksena kontit ovat kokonsa ja käynnistysnopeutensa suhteen virtuaalikoneita tehokkaampi ratkaisu \cite{Dua14}.
 
-% Kuva~\ref{fig:container} esittää resurssien jaon eri julkaisuratkaisuilla.
-% Konttijulkaisussa useampi erillisissä konteissa suoritettava sovellus käyttää samaa käyttöjärjestelmän ydintä ja konttien suoritusympäristöä.
-% Virtuaalikoneiden ja perinteisten 
-
 Yleisesti käytettyjä konttiteknologiapalveluita ovat Docker ja Podman \cite{Abraham20, Bernstein14}.
 Docker on suosittu ratkaisu, mutta vaatii toimiakseen aina käynnissä olevan palveluprosessin ja root-oikeudet palvelua suorittavaan käyttöjärjestelmään \cite{Abraham20}.
 Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillistä palveluprosessia ja root-oikeuksia \cite{Gantikow20}.
 Konttiteknologiapalveluiden käyttämiä konttien suoritysympäristöjä (\textit{container runtime}) ovat muun muassa containerd ja CRI-O.
 Konttien suoristusympäristöjen vaikutus palvelun suorituskykyyn suoraan palvelimelle julkaisemiseen verrrattuna on hyvin vähäinen \cite{torrez19, espe20}.
-
-% \begin{figure}[ht]
-% \begin{center}
-% \includegraphics[width=0.9\textwidth]{figures/container_evolution.png}
-% \caption{Sovelluksen omat ja jaetut resurssit eri julkaisutavoilla \cite{Kubernetes23}\label{fig:container}.}
-% \end{center}
-% \end{figure}
 
 \section{Konttiorkestrointialustat\label{platforms}}
 
