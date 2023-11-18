@@ -1,7 +1,7 @@
 \chapter{Muut vaihtoehdot\label{options}}
 
-Konttiteknologian ja konttien orkestraation lisäksi käytössä on muita julkaisutapoja. Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
-Sekä konttien että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestraatioalustan sijaan tai lisäksi erilaisia pilvialustoja \cite{Bousselmi14}.
+Konttiteknologian ja konttien orkestroinnin lisäksi käytössä on muita julkaisutapoja. Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
+Sekä konttien että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestrointialustan sijaan tai lisäksi erilaisia pilvialustoja \cite{Bousselmi14}.
 Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin palvelimettomaan arkkitehtuurin perustuviin ratkaisuihin \cite{Baldini17}.
 
 Käsiteltävät vaihtoehdot jaetaan tässä tutkielmassa julkaisutapoihin, joita ovat kuvassa \ref{fig:container} esitetyt fyysiselle palvelimelle julkaisu sekä virtuaalikone- ja konttipohjaiset julkaisut.
@@ -31,7 +31,7 @@ Virtuaalikoneiden erilliset käyttöjärjestelmät luovat kuitenkin paremman eri
 \end{figure}
 
 Virtuaalikoneet voivat olla kontteja sopivampi julkaisuratkaisu varsinkin tietoturvan kannalta kriittisissä tilanteissa.
-Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows ja macOS pohjaisia virtuaalikoneita, kun taas konttiteknologiat on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{Watada19}.
+Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows ja macOS pohjaisia virtuaalikoneita, kun taas konttiteknologia on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{Watada19}.
 Virtuaalikoneiden kontteja suuremmat resurssikustannukset ja hitaampi käynnistymisaika kuitenkin tekevät niistä huonommin soveltuvia konttiorkestrointialustojen kaltaisiin ratkaisuihin.
 Useat pilvialustat tarjoavat virtuaalikoneille konttien orkestrointia vastaavia palveluita, mutta Kuberneteksen kaltaista vakintuunutta ja yhtä kattavaa järjestelmää ei ole kehitetty. % Can't find citation
 
@@ -60,7 +60,7 @@ Tämän vuoksi tässä tutkielmassa pilvialustoja käsitellään käytännön es
 
 GCP tarjoaa muun muassa fyysisiä palvelimia, tallennustilaa, virtuaalikoneita, tietokantoja ja Kubernetes-klustereita \cite{Products23}.
 Näin ollen kaikki aiemmin käsitellyt julkaisutavat sekä konttien orkestrointiin perustuvat ratkaisut voidaan toteuttaa pilvialustan avulla.
-Pilvialustan käyttö ei siis ole myös konttiorkestraatioalustan käyttöä poissulkeva ratkaisu.
+Pilvialustan käyttö ei siis ole myös konttiorkestrointialustan käyttöä poissulkeva ratkaisu.
 Luvussa \ref{platforms} mainittu Kuberneteksen \textit{Cloud controller manager} mahdollistaa pilvialustojen ja konttien orkestroinnin etujen yhdistämisen.
 
 Kuva \ref{fig:architecture} sisältää esimerkkiarkitehtuurin Kubernetes-klusterin ja GCP-pilvialusta tarjoamien palveluiden yhdistämisestä.
@@ -86,4 +86,4 @@ Myös palvelimeton arkkitehtuuri on mahdollista yhdistää Kubernetes-pohjaisen 
 
 DevOps-toimintamallin kannalta pilvialustat yksinkertaistavat tarvittavien palveluiden, kuten CI/CD-palvelimien käyttöä.
 Pilvialustoihin voi kuitenkin liittyä esimerkiksi lainsäädännöllisiä ongelmia muun muassa käyttäjätietojen säilömisen osalta \cite{Barati22}.
-Konttiorkestraatioalusta esimerkiksi Kuberneteksen muodossa on taas avoimen lähdekoodin standardisoitu ratkaisu, joka luvun \ref{orchestration:devops} perusteella soveltuu hyvin DevOps-toimintamallin mukaiseen ohjelmistotuotantoon ja voidaan julkaista jopa yksittäisen oman palvelimen avulla tai muun muassa pilvialustan avulla \cite{Muddinagiri19, Khan22}.
+Konttiorkestrointialusta, esimerkiksi Kuberneteksen muodossa, on taas avoimen lähdekoodin standardisoitu ratkaisu, joka luvun \ref{orchestration:devops} perusteella soveltuu hyvin DevOps-toimintamallin mukaiseen ohjelmistotuotantoon ja voidaan julkaista jopa yksittäisen oman palvelimen avulla tai muun muassa pilvialustan avulla \cite{Muddinagiri19, Khan22}.

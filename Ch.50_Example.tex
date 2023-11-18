@@ -23,7 +23,7 @@ Seuraavaksi esitellään Norpan kehityksessä ja tuotantokäytössä käytetyt t
 
 Norppa on avoimen lähdekoodin projekti, jonka lähdekoodi ja versiohistoria säilötään GitHub-alustalla.
 DevOps-toimintamallin mukainen jatkuva integraatio ja toimitus toteutetaan osana versiohallintaa \textit{GitHub Actions}-palvelun avulla.
-Kaikissa toimintamallin vaiheissa käytetään konttiteknologiaa ja orkestrointiratkaisuna toimii Kubernetekseen perustuva OpenShift-konttiorkestraatioalusta.
+Kaikissa toimintamallin vaiheissa käytetään konttiteknologiaa ja orkestrointiratkaisuna toimii Kubernetekseen perustuva OpenShift-konttiorkestrointialusta.
 
 Kuva \ref{fig:norppa:deployment} esittää Norpan julkaisuputken ja käytetyt analytiikkapalvelut.
 Kehittäjän viedessä uuden koodimuutoksen versiohallintaan uudesta koodiversiosta rakennetaan automaattisesti kontti, jota vasten suoritetaan testit.
@@ -42,8 +42,8 @@ Uusia toiminnallisuuksia tuodaan käyttöön osittain pienten yksittäisten julk
 
 \section{Konttien orkestroinnin käyttö}
 
-Norpan testi- ja tuotantoympäristönä toimii yliopiston OpenShift-konttiorkestraatioalusta.
-OpenShift on Kubernetekseen perustuva konttiorkestraatioalusta, joka tarjoaa konttien orkestroinnin lisäksi muun muassa käyttäjähallinnan ja oman graaffisen käyttöliittymänsä \cite{Lossent17}.
+Norpan testi- ja tuotantoympäristönä toimii yliopiston OpenShift-konttiorkestrointialusta.
+OpenShift on Kubernetekseen perustuva konttiorkestrointialusta, joka tarjoaa konttien orkestroinnin lisäksi muun muassa käyttäjähallinnan ja oman graaffisen käyttöliittymänsä \cite{Lossent17}.
 Kuvassa \ref{fig:norppa:deployment} esitetty julkaisuputki ja erillisellä virtuaalikoneella toimivat analytiikkapalvelut sijaitsevat OpenShift-klusterin ulkopuolella.
 
 Kuva \ref{fig:norppa:architecture} esittää Norpan ohjelmistoarkkitehtuurin osana OpenShift-klusteria.
