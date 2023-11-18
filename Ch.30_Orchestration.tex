@@ -26,7 +26,7 @@ Myös saman palvelun replikaatio ja alueellinen hajauttaminen luovat tarpeen hal
 Konttiorkestrointialustat ovat järjestelmiä, joiden tehtävä on mahdollistaa suurien konttimäärien hallinnointi.
 Konttiorkestrointialustat hallinnoivat konttien resurssien käyttöä, mahdollistavat konttien monitoroinnin ja huolehtivat konttien virhetilanteista toipumisesta \cite{Zhou21}.
 
-Kubernetes on laajalti käytetty Konttiorkestrointiratkaisu.
+Kubernetes on laajalti käytetty konttiorkestrointiratkaisu.
 Se on nykyisistä ratkaisuista suorituskyvyltään tehokkain ja myös toiminnallisuuksiltaan kattavin \cite{Jawarneh19}.
 Muita ratkaisuja ovat muun muassa Docker Swarm ja Amazon Elastic Container Service \cite{Khan17}.
 Tässä tutkielmassa konttien orkestrointia käsitellään pääasiassa Kuberneteksen kautta.
@@ -45,7 +45,7 @@ Kubernetes mahdollistaa muun muassa seuraavat asiat \cite{Zhou21}:
 \item Automaattinen skaalautuminen (\textit{auto-scaling}): Konttien lisääminen tai poistaminen automaattisesti kuormituksen mukaan.
 \end{itemize}
 
-Kuva \ref{fig:kubernetes} esittää Kuberneteksen eri komponentit. Kubernetes-klusteri koostuu useasta podeja suorittavista nodeista.
+Kuva \ref{fig:kubernetes} esittää Kuberneteksen eri komponentit. Kubernetes-klusteri koostuu useasta podeja suorittavista somuista.
 Koko klusteria hallinnoi \textit{Control Plane}, joka sisältää klusterin hallinnointiin käytetyn REST-rajapinnan, podien jakautumisesta nodejen välillä huolehtivan vuorontajan sekä pysyväistallennetun avainarvosäilön.
 Näiden lisäksi \textit{Control Plane} sisältää useita \textit{Controller manager}-prosesseja, jotka hallinnoivat eri resursseja.
 Erityisesti \textit{Cloud controller manager} on komponentti, joka mahdollistaa Kubernetes-klusterin yhdistämisen eri pilvialustojen rajapintojen kanssa \cite{components23}.
@@ -64,7 +64,7 @@ Konttiteknologia avulla kontitettua palvelua voidaan siirtää eri ympäristöje
 Konttiteknologian avulla koko palvelun ympäristöä voidaan hallita ja riippuvuudet voidaan määritellä konttikohtaisesti.
 Tämä konfiguroitavuus johtaa palvelun ennustettavampaan toimintaan ja helpompaan vianmääritykseen \cite{Narasimhulu23}.
 
-Kontin siirrettävyys tukee tehokasta varmennus- ja julkaisuvaihetta DevOps-toimintamallissa, koska samaa konttia voidaan ensin käyttää testauksessa ja sen jälkeen siirtä se esimerkiksi julkaisualustana toimivalle Konttiorkestrointialustalle.
+Kontin siirrettävyys tukee tehokasta varmennus- ja julkaisuvaihetta DevOps-toimintamallissa, koska samaa konttia voidaan ensin käyttää testauksessa ja sen jälkeen siirtä se esimerkiksi julkaisualustana toimivalle konttiorkestrointialustalle.
 Kontin ympäristön konfiguroitavuus taas auttaa operointi- ja monitorointivaiheissa.
 Konfiguroitavuus mahdollistaa koko palvelun ympäristön hallinnan ja riippuvuuksien määrittelyn.
 Näin palveluun vaikuttavat ulkoiset tekijät ovat paremmin tiedossa

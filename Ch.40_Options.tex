@@ -16,7 +16,7 @@ Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (\textit{hyper
 
 Konttiteknologia on käyttöjärjestelmätason virtualisointia, kun taas virtuaalikoneet ovat laitteistotason virtualisointia \cite{Compastie20}.
 Virtuaalikoneet mahdollistavat konttien tapaan palvelimesta erillisen toistettavan ympäristön.
-Kuvassa \ref{fig:container} esitetään svelluksen omat ja jaetut resurssit eri julkaisutavoilla.
+Kuvassa \ref{fig:container} esitetään palvelun omat ja jaetut resurssit eri julkaisutavoilla.
 Virtuaalikonejulkaisun osalta jokaisella virtualisointiympäristössä toimivalla virtuaalikoneella on oltava oma kopionsa käyttöjärjestelmästä.
 Konttijulkaisussa konttien suoritusympäristössä toimivat kontit taas jakavat saman käyttöjärjestelmän.
 
@@ -54,7 +54,7 @@ Julkaisutapa ei näin ollen sovellu hyvin DevOps-toimintamallin mukaiseen ohjelm
 \section{Pilvialustat ja palvelimeton arkkitehtuuri}
 
 Pilvialustojen käytöllä tarkoitetaan palvelun tai sen osan toteuttamiseen ulkoisen palveluntarjoajan järjestelmien avulla.
-Pilvialustan käytöllä monia ohjelmistontuotannon ja DevOps-toimintallin vaiheita voidaan tarvittaessa ulkoistaa pilvialustan vastuulle \cite{tomarchio20}.
+Pilvialustan käytöllä monia ohjelmistotuotannon ja DevOps-toimintallin vaiheita voidaan tarvittaessa ulkoistaa pilvialustan vastuulle \cite{tomarchio20}.
 Erilaisia pilvialustoja on paljon ja niiden toimintatavat ja tarjoamat palvelut vaihtelevat laajalti.
 Tämän vuoksi tässä tutkielmassa pilvialustoja käsitellään käytännön esimerkkinä toimivan \textit{Google Cloud Platform}:in (GCP) kautta, joka on laajalti käytetty ja tarjoaa kattavan määrän erilaisia pilvialustoille ominaisia palveluita \cite{ahuja20}.
 
@@ -86,4 +86,5 @@ Myös palvelimeton arkkitehtuuri on mahdollista yhdistää Kubernetes-pohjaisen 
 
 DevOps-toimintamallin kannalta pilvialustat yksinkertaistavat tarvittavien palveluiden, kuten CI/CD-palvelimien käyttöä.
 Pilvialustoihin voi kuitenkin liittyä esimerkiksi lainsäädännöllisiä ongelmia muun muassa käyttäjätietojen säilömisen osalta \cite{Barati22}.
-Konttiorkestrointialusta, esimerkiksi Kuberneteksen muodossa, on taas avoimen lähdekoodin standardisoitu ratkaisu, joka luvun \ref{orchestration:devops} perusteella soveltuu hyvin DevOps-toimintamallin mukaiseen ohjelmistotuotantoon ja voidaan julkaista jopa yksittäisen oman palvelimen avulla tai muun muassa pilvialustan avulla \cite{Muddinagiri19, Khan22}.
+Konttiorkestrointialusta, esimerkiksi Kuberneteksen muodossa, on taas avoimen lähdekoodin standardisoitu ratkaisu, joka luvun \ref{orchestration:devops} perusteella soveltuu hyvin DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
+Kubernetes-klusteri voidaan julkaista jopa yksittäiselle omalle palvelimelle tai muun muassa pilvialustan avulla \cite{Muddinagiri19, Khan22}.
