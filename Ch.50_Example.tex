@@ -8,7 +8,7 @@ Palvelun perustoiminta ja ohjelmistoarkitehtuuri esitetään tässä luvussa.
 \section{Norppa-palautejäjestelmä}
 
 Helsingin yliopiston tietojenkäsittelytieteen osaston sovelluskehitysakatemian (\textit{Toska}) \cite{Tenhunen23} kehittämä kurssipalautejärjestelmä Norppa on tutkielmassa esitetyn DevOps-toimintamallin mukaisessa aktiivisessa kehityksessä.
-Järjestelmää käytetään Helsingin Yliopiston lisäksi myös Tampereen yliopiston kurssipalautejärjestelmänä \cite{Tampere23}.
+Järjestelmää käytetään Helsingin yliopiston lisäksi myös Tampereen yliopiston kurssipalautejärjestelmänä \cite{Tampere23}.
 
 Norppa on integroitu Sisu-opintotietojärjestelmän kanssa.
 Järjestelmä luo automaattisesti muokattavan palautelomakkeen ja tiedottaa Sisussa luodun kurssin opiskelijoille palautteen aukeamisesta.
@@ -37,7 +37,7 @@ Uuden koodimuutoksen vieminen tuotantoympäristöön vaatii manuaalisen hyväksy
 \end{center}
 \end{figure}
 
-Koko julkaisuputki kestää noin viisitoista minuuttia ja mahdollistaa näin useat päivittäiset julkaisut.
+Koko julkaisuputki kestää noin 15 minuuttia ja mahdollistaa näin useat päivittäiset julkaisut.
 Uusia toiminnallisuuksia tuodaan käyttöön osittain pienten yksittäisten julkaisujen kautta, jonka seurauksena koodimuutoksista saadaan nopeaa palautetta ja mahdollisiin ongelmiin voidaan reagoida nopeasti.
 
 \section{Konttien orkestroinnin käyttö}
@@ -56,7 +56,7 @@ Helsingin ja Tampereen yliopistot käyttävät samaa Norpan ydintä, mutta muut 
 \includegraphics[width=1\textwidth]{figures/norppa_architecture.png}
 \caption{Norpan laajennettu arkkitehtuuridiagrammi \cite{Norppa23}\label{fig:norppa:architecture}.}
 \end{center}
-\end{figure}norppa
+\end{figure}
 
 Norpan ydin muodostuu React pohjaisesta käyttöliittymästä ja NodeJS-palvelimesta.
 Sisusta haetun opintodatan synkronisoinnista huolehtii erillinen Updater-palvelu.
