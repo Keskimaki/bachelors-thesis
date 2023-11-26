@@ -2,15 +2,17 @@
 
 Tutkielmassa on nyt käsitelty DevOps-toimintamallia ja sen yhteydessä käytettäviä julkaisutapoja ja orkestrointiratkaisuja.
 Osana tutkielmaa esitetään käytännön toteutus käsiteltyjen aiheiden käytöstä ohjelmistotuotannossa.
-Helsingin Yliopiston Norppa-palautejärjestelmän kehitys perustuu DevOps-toimintamalliin ja palvelu käyttää monia tutkielmassa käsiteltyjä teknologioita.
+Helsingin Yliopiston Norppa-palautejärjes\-telmän kehitys perustuu DevOps-toimintamalliin ja palvelu käyttää monia tutkielmassa käsiteltyjä teknologioita.
+
 Palvelun perustoiminta ja ohjelmistoarkitehtuuri esitetään tässä luvussa.
+Olen osallistunut järjestelmän ohjelmistotuotantoon Toskassa ja toteuttanut tässä luvussa esitettävän OpenShift-pohjaisen konttiorkestrointiratkaisun.
 
 \section{Norppa-palautejäjestelmä}
 
-Helsingin yliopiston tietojenkäsittelytieteen osaston sovelluskehitysakatemian (\textit{Toska}) \cite{Tenhunen23} kehittämä kurssipalautejärjestelmä Norppa on tutkielmassa esitetyn DevOps-toimintamallin mukaisessa aktiivisessa kehityksessä.
+Helsingin yliopiston tietojenkäsittelytieteen osaston sovelluskehitysakatemian (\textit{Toska}) \cite{Tenhunen23} kehittämä kurssipalautejärjestelmä Norppa on tutkielmassa esitetyn DevOps-toimintamal\-lin mukaisessa aktiivisessa kehityksessä.
 Järjestelmää käytetään Helsingin yliopiston lisäksi myös Tampereen yliopiston kurssipalautejärjestelmänä \cite{Tampere23}.
 
-Norppa on integroitu Sisu-opintotietojärjestelmän kanssa.
+Norppa on integroitu Sisu-opintotietojärjestelmän \cite{Laukka20} kanssa.
 Järjestelmä luo automaattisesti muokattavan palautelomakkeen ja tiedottaa Sisussa luodun kurssin opiskelijoille palautteen aukeamisesta.
 Annetusta palautteesta luodaan yhteenveto, joka näytetään kurssin opiskelijoille ja opettajille.
 Norppa tukee myös muun muassa avointa tekstuaalista jatkuvaa palautetta ja koulutusohjelma- sekä yliopistotason palautteen yhteenvetonäkymiä.
@@ -42,11 +44,12 @@ Uusia toiminnallisuuksia tuodaan käyttöön osittain pienten yksittäisten julk
 
 \section{Konttien orkestroinnin käyttö}
 
-Norpan testi- ja tuotantoympäristönä toimii yliopiston OpenShift-konttiorkestrointialusta.
-OpenShift on Kubernetekseen perustuva konttiorkestrointialusta, joka tarjoaa konttien orkestroinnin lisäksi muun muassa käyttäjähallinnan ja oman graaffisen käyttöliittymänsä \cite{Lossent17}.
+Norpan testi- ja tuotantoympäristönä toimii Helsingin yliopiston OpenShift-konttiorkes\-trointialusta \cite{Helsinki21}.
+OpenShift on Kubernetekseen perustuva konttiorkestrointialusta, joka tarjoaa konttien orkestroinnin lisäksi muun muassa käyttäjähallinnan ja oman graaffisen käyttöliittymänsä~\cite{Lossent17}.
 Kuvassa \ref{fig:norppa:deployment} esitetty julkaisuputki ja erillisellä virtuaalikoneella toimivat analytiikkapalvelut sijaitsevat OpenShift-klusterin ulkopuolella.
 
 Kuva \ref{fig:norppa:architecture} esittää Norpan ohjelmistoarkkitehtuurin osana OpenShift-klusteria.
+Saman ohjelmistoarkkitehtuurin mukaiset palvelut on toteutettu sekä testi- että tuotantoklustereissa.
 Norppa koostuu ydinpalvelusta ja siihen liitettävistä erillisistä mikropalveluista.
 Tämä arkkitehtuuriratkaisu mahdollistaa palvelun muokattavuuden.
 Helsingin ja Tampereen yliopistot käyttävät samaa Norpan ydintä, mutta muut palvelut on toteutettu erikseen yliopistojen tarpeiden mukaisesti.
@@ -65,3 +68,11 @@ Tämän lisäksi Norppa käyttää useita myös muiden järjestelmien käyttämi
 Kaikki palvelut sijaitsevat samassa OpenShift-klusterissa, joka mahdollistaa helpon palveluiden välisen kommunikaation.
 OpenShift-klusteri hakee \textit{Quay.io}-konttirekisteristä uuden kontin julkaisun yhteydessä ja huolehtii käytössä olevien konttien päivityksestä.
 Julkaisujen lisäksi klusteri huolehtii luvun \ref{platforms} mukaisesti muun muassa resurssien käyttörajojen hallinnasta ja automaattisesta skaalautumisesta.
+
+Ennen OpenShift-pohjaista konttiorkestrointiratkaisua Norppa ja sen käyttämät mikropalvelut oli toteutettu Helsingin yliopiston tietojenkäsittelytieteen osaston virtuaalikoneilla.
+Järjestelmä käytti jo tässä vaiheessa virtuaalikoneiden lisäksi konttiteknologiaa, joka mahdollisti DevOps-toimintamallin mukaisen ohjelmistotuotannon.
+Konttien orkestroinnin käyttöönotto kuitenkin yksinkertaisti muun muassa uusien ohjelmistoversioiden julkaisua ja paransi järjestelmän käytettävyysaikaa konttien orkestroinnin tarjoaman vikasietoisuuden vuoksi.
+
+Norpan sekä Toskan muiden järjestelmien keskittäminen OpenShift-klusteriin mahdollisti 14 erikseen hallinnoitavan virtuaalikoneen sulkemisen.
+Erilliset virtuaalikoneet vaativat ajoittain manuaalista hallinnointia muun muassa käyttöjärjestelmäpäivitysten ja tallennustilan hallinnan suhteen, joten ohjelmistoinfrastruktuurin ylläpitotaakka on vähentynyt.
+Myös koko ohjelmistoinfrastruktuurin vakaus on lisääntynyt, koska yksittäisten virtuaalikoneiden ongelmat eivät enää aiheuta häiriöitä koko järjestelmälle.

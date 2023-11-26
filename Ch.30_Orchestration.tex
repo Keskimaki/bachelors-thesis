@@ -17,7 +17,7 @@ Yleisesti käytettyjä konttiteknologiapalveluita ovat Docker ja Podman \cite{Ab
 Docker on suosittu ratkaisu, mutta vaatii toimiakseen aina käynnissä olevan palveluprosessin ja root-oikeudet palvelua suorittavaan käyttöjärjestelmään \cite{Abraham20}.
 Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillistä palveluprosessia ja root-oikeuksia \cite{Gantikow20}.
 Konttiteknologiapalveluiden käyttämiä konttien suoritysympäristöjä (\textit{container runtime}) ovat muun muassa containerd ja CRI-O.
-Konttien suoristusympäristöjen vaikutus palvelun suorituskykyyn suoraan palvelimelle julkaisemiseen verrrattuna on hyvin vähäinen \cite{torrez19, espe20}.
+Konttien suoristusympäristöjen vaikutus palvelun suorituskykyyn suoraan palvelimelle julkaisemiseen verrattuna on vähäinen \cite{torrez19, espe20}.
 
 \section{Konttiorkestrointialustat\label{platforms}}
 
@@ -75,10 +75,16 @@ Tuotantoympäristöä mahdollisimman paljon muistuttavan kehitysympäristön avu
 Näin voidaan välttää palvelun toiminnalle aiheutuvia häiriöitä.
 
 Luvussa \ref{platforms} käsitellyt Kuberneteksen tarjoamat konttien orkestrointipalvelut tukevat myös hyvin DevOps-toimintamallia.
-Resurssien käytön hallinta, vuoronvalvonta, kuormituksen tasapainottaminen ja automaattinen skaalautuminen tukevat kaikki hyvin operointivaihetta.
-Terveystarkastus ja vikasietoisuus taas tukevat monitorointia.
+Resurssien käytön hallinta, vuoronvalvonta, kuormituksen tasapainottaminen ja automaattinen skaalautuminen ovat kaikki hyödyksi operointivaiheessa.
+Terveystarkastus ja vikasietoisuus taas edistävät monitorointivaihetta.
 Konttiorkestrointialustan käyttö myös itsessään mahdollistaa konttiteknologian käytön palvelun julkaisuratkaisuna, joka tekee samankaltaisen kontin käytöstä kehityksen, testauksen ja tuotantokäytön aikana mahdollista.
 
-Konttiteknologian ja konttien orkestroinnin käytöstä osana DevOps-toimintamallia on löytynyt paljon etuja.
+Konttiteknologian ja konttien orkestroinnin käytöstä osana DevOps-toimintamallia on nyt käyty läpi paljon etuja.
+Konttiteknologian käyttö luo kuitenkin uuden abstraktiokerroksen suoraan palvelimelle julkaisun sijaan, joka voi monimutkaistaa muuten yksinkertaisempaa julkaisuprosessia.
+Kontin erillinen ympäristö voi myös johtaa huonompaan ymmärrykseen palvelimen todellisesta ympäristöstä, koska kontin luoma abstraktio piilottaa osaltaan palvelimen toimintaa \cite{Mikkonen22}.
+
+Konttiorkestrointialustan käyttö myös lisää palvelun monimutkaisuutta, varsinkin jos kehittäjillä ei ole aiempaa kokemusta konttien orkestroinnista.
+Konttien orkestroinnin tarjoamat edut perustuvat suuren määrän kontteja hallinnointiin automaattisesti \cite{Khan17}.
+Näin ollen yksinkertaisen palvelun, kuten muutamasta kontista koostuvan itsenäisen sovelluksen, osalta konttiorkestrointialustan käyttö voi turhaan monimutkaistaa ohjelmistoinfrastruktuuria.
 Seuraavaksi tarkastellaan muita julkaisutapoja ja niiden soveltuvuutta DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
 Näitä julkaisutapoja verrataan myös konttiteknologian ja konttien orkestroinnin käyttöön.

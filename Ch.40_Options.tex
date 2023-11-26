@@ -1,11 +1,12 @@
 \chapter{Muut julkaisutavat jo orkestrointiratkaisut\label{options}}
 
-Konttiteknologian ja konttien orkestroinnin lisäksi käytössä on muita julkaisutapoja. Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
+Konttiteknologian lisäksi käytössä on muita julkaisutapoja.
+Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
 Sekä konttien että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestrointialustan sijaan tai lisäksi erilaisia pilvialustoja \cite{Bousselmi14}.
-Konttiteknologioiden käytön yleistyminen on myös johtanut uusiin palvelimettomaan arkkitehtuurin perustuviin ratkaisuihin \cite{Baldini17}.
+Konttiteknologian käytön yleistyminen on myös johtanut uusiin palvelimettomaan arkkitehtuurin perustuviin ratkaisuihin \cite{Baldini17}.
 
 Käsiteltävät vaihtoehdot jaetaan tässä tutkielmassa julkaisutapoihin, joita ovat kuvassa \ref{fig:container} esitetyt fyysiselle palvelimelle julkaisu sekä virtuaalikone- ja konttipohjaiset julkaisut.
-Julkaisutapojen lisäksi käsitellään erilaisia orkestrointiratkaisuja konttien orkestroinnin ja pilvialustojen tarjoamien palveluiden muodossa.
+Julkaisutapojen lisäksi käsitellään erilaisia orkestrointiratkaisuja konttien orkestroinnin ja pilvialustojen tarjoamien palveluiden sekä palvelimettoman arkkitehtuurin muodossa.
 
 \section{Virtuaalikoneet}
 
@@ -20,15 +21,17 @@ Kuvassa \ref{fig:container} esitetään palvelun omat ja jaetut resurssit eri ju
 Virtuaalikonejulkaisun osalta jokaisella virtualisointiympäristössä toimivalla virtuaalikoneella on oltava oma kopionsa käyttöjärjestelmästä.
 Konttijulkaisussa konttien suoritusympäristössä toimivat kontit taas jakavat saman käyttöjärjestelmän.
 
-Tämän rakenteellisen eron vuoksi kontti on kokonsa ja käynnistysnopeutensa suhteen virtuaalikonetta tehokkaampi ratkaisu.
-Virtuaalikoneiden erilliset käyttöjärjestelmät luovat kuitenkin paremman eristyneisyyden (\textit{isolation}), jonka vuoksi virtuaalikoneet tarjoavat kontteja paremman tietoturvan \cite{Sultan19}.
-
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[width=0.9\textwidth]{figures/container_evolution.png}
+\includegraphics[width=1\textwidth]{figures/container_evolution.png}
 \caption{Sovelluksen omat ja jaetut resurssit eri julkaisutavoilla \cite{Kubernetes23}\label{fig:container}.}
 \end{center}
 \end{figure}
+
+\pagebreak
+
+Tämän rakenteellisen eron vuoksi kontti on kokonsa ja käynnistysnopeutensa suhteen virtuaalikonetta tehokkaampi ratkaisu.
+Virtuaalikoneiden erilliset käyttöjärjestelmät luovat kuitenkin paremman eristyneisyyden (\textit{isolation}), jonka vuoksi virtuaalikoneet tarjoavat kontteja paremman tietoturvan \cite{Sultan19}.
 
 Virtuaalikoneet voivat olla kontteja sopivampi julkaisuratkaisu varsinkin tietoturvan kannalta kriittisissä tilanteissa.
 Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows- ja macOS-pohjaisia virtuaalikoneita, kun taas konttiteknologia on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{Watada19}.
@@ -82,7 +85,10 @@ GCP tarjoaa myös palvelimettomaan arkkitehtuuriin (\textit{Serverless}) perustu
 Palvelimeton arkkitehtuuri tarkoittaa pilvialustan infrastruktuurin piilottamista käyttäjältä ja palveluiden automaattista skaalausta käyttömäärän mukaisesti.
 Tämä mahdollistaa laskutuksen käyttömäärän perusteella, kun taas muut pilvialustapalvelut aiheuttavat usein jatkuvia kustannuksia \cite{shafiei22}.
 Palvelimettomaan arkkitehtuuriin perustuvat ratkaisut pohjautuvat yleensä konttiteknologian käyttöön ja niiden haittapuolia ovat ennalta-arvaamaton resurssien käyttö ja hidas käynnistymisaika \cite{shafiei22, mondal22}.
-Myös palvelimeton arkkitehtuuri on mahdollista yhdistää Kubernetes-pohjaisen konttien orkestroinnin kanssa \cite{mondal22}. 
+
+Palvelimeton arkkitehtuuri soveltuu varsinkin tilanteisiin, joissa julkaistavan palvelun käyttömäärät ovat epätasaisia, koska jatkuvasti käynnissä oleva palvelin ei aiheuta turhia kustannuksia.
+Palvelimeton arkkitehtuuri voi olla myös soveltuva ratkaisu yksittäisten kontitettujen palveluiden julkaisuun, kun luvussa \ref{platforms} käsiteltyjä konttien orkestrointipalveluita ei tarvita.
+Myös palvelimeton arkkitehtuuri on tarvittaessa mahdollista yhdistää Kubernetes-pohjaisen konttien orkestroinnin kanssa \cite{mondal22}.
 
 DevOps-toimintamallin kannalta pilvialustat yksinkertaistavat tarvittavien palveluiden, kuten CI/CD-palvelimien käyttöä.
 Pilvialustoihin voi kuitenkin liittyä esimerkiksi lainsäädännöllisiä ongelmia muun muassa käyttäjätietojen säilömisen osalta \cite{Barati22}.
