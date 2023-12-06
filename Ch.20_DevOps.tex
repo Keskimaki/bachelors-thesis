@@ -34,12 +34,12 @@ DevOps-toimintamallin vaiheet ja niistä käytetyt termit vaihtelevat lähteest�
 
 \section{Jatkuva integraatio ja toimitus}
 
-Jatkuva integraatio ja toimitus (\textit{continuous integration and continuous deployment, CI/CD}) on keskeinen osa DevOps-toimintamallia \cite{Jabbari16, Leite19}.
-Jatkossa tutkielmassa käsitteisiin viitataan vakiintuneilla lyhenteillä CI ja CD.
+Jatkuva integraatio ja toimitus (\textit{continuous integration and continuous delivery}) on keskeinen osa DevOps-toimintamallia \cite{Jabbari16, Leite19}.
+Jatkuvan integraation ja toimituksen avulla voidaan automatisoida DevOps-toimintamallin varmennus- ja julkaisuvaiheet.
 
-CI tarkoittaa koodimuutosten vientiä versionhallintaan nopealla tahdilla ja automaattista testausta koodimuutosten jälkeen.
-CD taas tarkoittaa CI:n jälkeen tapahtuvaa koodin automaattista julkaisua tuotantoympäristöön tai sitä muistuttavaan testiympäristöön \cite{Shahin17}.
-CI/CD mahdollistaa näin tehokkaan laadunvalvonnan ja ohjelmiston nopean julkaisusyklin.
+Jatkuva integraatio tarkoittaa koodimuutosten vientiä versionhallintaan nopealla tahdilla ja automaattista testausta koodimuutosten jälkeen.
+Jatkuva toimitus taas tarkoittaa jatkuvan integraation jälkeen tapahtuvaa koodin automaattista julkaisua tuotantoympäristöön tai sitä muistuttavaan testiympäristöön \cite{Shahin17}.
+Jatkuva integraatio ja toimitus mahdollistaa näin tehokkaan laadunvalvonnan ja ohjelmiston nopean julkaisusyklin.
 
 \begin{figure}[ht]
 \begin{center}
@@ -48,9 +48,10 @@ CI/CD mahdollistaa näin tehokkaan laadunvalvonnan ja ohjelmiston nopean julkais
 \end{center}
 \end{figure}
 
-Kuva \ref{fig:cicd} esittää esimerkin mahdollisesta CI/CD-putkesta. CI/CD käynnistyy kehittäjän viedessä uuden koodimuutoksen versiohallintaan.
-CI:n aikana uusi version sovelluksesta rakennetaan päivitetystä koodista ja uudelle versiolle suoritetaan automaattiset testit.
-Automaattiset testit läpäissyt koodi voidaan tarvittaessa katselmoida ja sovelluksen uusi versio julkaistaan vaiheittain testi- ja tuotantoympäristöihin osana CD:tä.
+Kuva \ref{fig:cicd} esittää esimerkin jatkuvan integraation ja toimituksen vaiheista.
+Jatkuva integraatio ja toimitus käynnistyy kehittäjän viedessä uuden koodimuutoksen versiohallintaan.
+Jatkuvan integraation aikana uusi version sovelluksesta rakennetaan päivitetystä koodista ja uudelle versiolle suoritetaan automaattiset testit.
+Automaattiset testit läpäissyt koodi voidaan tarvittaessa katselmoida ja sovelluksen uusi versio julkaistaan vaiheittain testi- ja tuotantoympäristöihin osana jatkuvaa toimitusta.
 
 \section{Haasteet}
 
@@ -59,7 +60,7 @@ Haasteissa painottuvat erityisesti inhimilliset tekijät kuten kommunikaatiohaas
 DevOps-toimintamallin käyttöönotto ja ohjelmistokehittäjien perehdyttäminen sen mukaisiin toimintatapoihin ja teknologiohin on haastavaa \cite{Leite19}.
 Tässä tutkielmassa keskitytään kuitenkin DevOps-toimintamalliin liittyviin teknisiin haasteisiin.
 
-CI/CD ja toimintamallin vaiheiden seuraaminen nopealla syklillä vaatii automaatiota ja vaiheiden helppoa toistettavuutta \cite{Jabbari16, Leite19}.
+Jatkuva integraatio ja toimitus sekä toimintamallin vaiheiden seuraaminen nopealla syklillä vaatii automaatiota ja vaiheiden helppoa toistettavuutta \cite{Jabbari16, Leite19}.
 Teknisenä haasteena on myös ohjelmistoinfrastruktuurin kehittäminen ja hallinnointi, kuten monimutkaiset kehitys- ja tuotantoympäristöt \cite{Khan22, Kalliosaari16}.
 Järkevien teknologiaratkaisujen valinta on toimintamallin onnistuneen käyttöönoton ja seurannan kannalta tärkeää.
 
