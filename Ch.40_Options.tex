@@ -18,8 +18,8 @@ Virtuaalikoneiden suoritus tapahtuu virtualisointiympäristössä (\textit{hyper
 Konttiteknologia on käyttöjärjestelmätason virtualisointia, kun taas virtuaalikoneet ovat laitteistotason virtualisointia \cite{Compastie20}.
 Virtuaalikoneet mahdollistavat konttien tapaan palvelimesta erillisen toistettavan ympäristön.
 Kuvassa \ref{fig:container} esitetään palvelun omat ja jaetut resurssit eri julkaisutavoilla.
-Virtuaalikonejulkaisun osalta jokaisella virtualisointiympäristössä toimivalla virtuaalikoneella on oltava oma kopionsa käyttöjärjestelmästä.
-Konttijulkaisussa konttien suoritusympäristössä toimivat kontit taas jakavat saman käyttöjärjestelmän.
+Virtuaalikonejulkaisun osalta jokaisella virtualisointiympäristössä toimivalla virtuaalikoneella on oltava oma kopionsa käyttöjärjestelmän ytimestä.
+Konttijulkaisussa konttien suoritusympäristössä toimivat kontit taas jakavat saman käyttöjärjestelmän ytimen.
 
 \begin{figure}[ht]
 \begin{center}
@@ -90,7 +90,7 @@ Palvelimeton arkkitehtuuri soveltuu varsinkin tilanteisiin, joissa julkaistavan 
 Palvelimeton arkkitehtuuri voi olla myös soveltuva ratkaisu yksittäisten kontitettujen palveluiden julkaisuun, kun luvussa \ref{platforms} käsiteltyjä konttien orkestrointipalveluita ei tarvita.
 Myös palvelimeton arkkitehtuuri on tarvittaessa mahdollista yhdistää Kubernetes-pohjaisen konttien orkestroinnin kanssa \cite{mondal22}.
 
-DevOps-toimintamallin kannalta pilvialustat yksinkertaistavat tarvittavien palveluiden, kuten CI/CD-palvelimien käyttöä.
+DevOps-toimintamallin kannalta pilvialustat yksinkertaistavat tarvittavien palveluiden, kuten jatkuvan integraation ja toimituksen käyttöä \cite{Singh19}.
 Pilvialustoihin voi kuitenkin liittyä esimerkiksi lainsäädännöllisiä ongelmia muun muassa käyttäjätietojen säilömisen osalta \cite{Barati22}.
 Konttiorkestrointialusta, esimerkiksi Kuberneteksen muodossa, on taas avoimen lähdekoodin standardisoitu ratkaisu, joka luvun \ref{orchestration:devops} perusteella soveltuu hyvin DevOps-toimintamallin mukaiseen ohjelmistotuotantoon.
 Kubernetes-klusteri voidaan julkaista jopa yksittäiselle omalle palvelimelle tai muun muassa pilvialustan avulla \cite{Muddinagiri19, Khan22}.

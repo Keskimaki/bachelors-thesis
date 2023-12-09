@@ -19,7 +19,7 @@ Norppa tukee myös muun muassa avointa tekstuaalista jatkuvaa palautetta ja koul
 
 Järjestelmän on kehittänyt Helsingin Yliopiston Toska-tiimi, mutta jatkokehitystä tehdään yhteistyössä Tampereen yliopiston kanssa.
 Kehitys perustuu avoimeen lähdekoodin ja DevOps-toimintamalliin.
-Seuraavaksi esitellään Norpan kehityksessä ja tuotantokäytössä käytetyt tutkielman kannalta merkitykselliset ratkaisut.
+Seuraavaksi esitetään Norpan kehityksessä ja tuotantokäytössä käytetyt tutkielman kannalta merkitykselliset ratkaisut.
 
 \section{DevOps-toimintamallin käyttö}
 
@@ -29,7 +29,7 @@ Kaikissa toimintamallin vaiheissa käytetään konttiteknologiaa ja orkestrointi
 
 Kuva \ref{fig:norppa:deployment} esittää Norpan julkaisuputken ja käytetyt analytiikkapalvelut.
 Kehittäjän viedessä uuden koodimuutoksen versiohallintaan uudesta koodiversiosta rakennetaan automaattisesti kontti, jota vasten suoritetaan testit.
-Testauksen onnistuessa sama kontti viedään \textit{Quay.io}-konttirekisteriin, josta se haetaan julkaistavaksi testiympäristöön.
+Testauksen onnistuessa samankaltainen kontti viedään \textit{Quay.io}-konttirekisteriin, josta se haetaan julkaistavaksi testiympäristöön.
 Uuden koodimuutoksen vieminen tuotantoympäristöön vaatii manuaalisen hyväksynnän, jonka seurauksena sama prosessi toistetaan, mutta julkaistu kontti merkitään vietäväksi tuotantoympäristöön.
 
 \begin{figure}[ht]
@@ -61,7 +61,7 @@ Helsingin ja Tampereen yliopistot käyttävät samaa Norpan ydintä, mutta muut 
 \end{center}
 \end{figure}
 
-Norpan ydin muodostuu React pohjaisesta käyttöliittymästä ja NodeJS-palvelimesta.
+Norpan ydin muodostuu React-pohjaisesta käyttöliittymästä ja NodeJS-palvelimesta.
 Sisusta haetun opintodatan synkronisoinnista huolehtii erillinen Updater-palvelu.
 Tämän lisäksi Norppa käyttää useita myös muiden järjestelmien käyttämiä mikropalveluita, kuten sähköpostipalvelua Pate ja käyttöoikeushallintapalvelua Jami.
 
