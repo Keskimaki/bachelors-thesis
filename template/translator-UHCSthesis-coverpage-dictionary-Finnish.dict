@@ -37,7 +37,7 @@
 \providetranslation{helsinki}{Helsinki}
 \providetranslation{faculty}{Matemaattis-luonnontieteellinen tiedekunta}
 \providetranslation{address}{PL 68 (Pietari Kalmin katu 5)\newline 00014 Helsingin yliopisto}
-\providetranslation{eaddress}{S\"ahkopostiosoite: info@cs.helsinki.fi\newline URL: https://www.cs.helsinki.fi/}
+\providetranslation{eaddress}{S\"ahk\"opostiosoite: info@cs.helsinki.fi\newline URL: https://www.cs.helsinki.fi/}
 \providetranslation{ytiedot}{Yhteystiedot}
 \providetranslation{supervisors}{Ohjaaja(t)}
 \providetranslation{examiner}{Tarkastaja(t)}
