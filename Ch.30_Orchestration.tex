@@ -1,7 +1,7 @@
 \chapter{Konttien orkestrointi\label{orchestration}}
 
 Konttiteknologiaa ja konttien orkestrointia käytetään monilla ohjelmistotuotannon osa-alueilla.
-Konttiteknologia mahdollistaa fyysisen palvelimen tai ohjelmistökehittäjän tietokoneen suoritusympäristöstä eroavan vakaan ja toistettavan ympäristön \cite{Watada19}.
+Konttiteknologia mahdollistaa fyysisen palvelimen tai ohjelmistokehittäjän tietokoneen suoritusympäristöstä eroavan vakaan ja toistettavan ympäristön \cite{Watada19}.
 Konttiorkestrointialustat hallinnoivat suuria määriä kontteja jaetussa klusterissa mahdollistaen palveluiden replikoinnin, tehokkaan julkaisuketjun, kontitettujen palveluiden monitoroinnin ja virhetiloista toipumisen \cite{Khan17}.
 
 \section{Kontti\label{container}}
@@ -16,7 +16,7 @@ Tämän seurauksena kontit ovat kokonsa ja käynnistysnopeutensa suhteen virtuaa
 Yleisesti käytettyjä konttiteknologiapalveluita ovat Docker ja Podman \cite{Abraham20, Bernstein14}.
 Docker on suosittu ratkaisu, mutta vaatii toimiakseen aina käynnissä olevan palveluprosessin ja root-oikeudet palvelua suorittavaan käyttöjärjestelmään \cite{Abraham20}.
 Nämä tekniset ongelmat ratkaisee esimerkiksi Podman, joka toimii ilman erillistä palveluprosessia ja root-oikeuksia \cite{Gantikow20}.
-Konttiteknologiapalveluiden käyttämiä konttien suoritysympäristöjä (\textit{container runtime}) ovat muun muassa containerd ja CRI-O.
+Konttiteknologiapalveluiden käyttämiä konttien suoritusympäristöjä (\textit{container runtime}) ovat muun muassa containerd ja CRI-O.
 Konttien suoristusympäristöjen vaikutus palvelun suorituskykyyn suoraan palvelimelle julkaisemiseen verrattuna on vähäinen \cite{torrez19, espe20}.
 
 \section{Konttiorkestrointialustat\label{platforms}}

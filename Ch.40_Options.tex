@@ -1,7 +1,7 @@
 \chapter{Muut julkaisutavat ja orkestrointiratkaisut\label{options}}
 
 Konttiteknologian lisäksi käytössä on muita julkaisutapoja.
-Konttiteknologian sijaan suoritusympäristön virtualisaatio voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
+Konttiteknologian sijaan suoritusympäristön virtualisointi voidaan toteuttaa virtuaalikoneiden avulla tai palvelua voidaan suorittaa suoraan fyysisellä palvelimella \cite{Watada19}.
 Sekä konttien että virtuaalikoneiden hallinnointiin voidaan käyttää konttiorkestrointialustan sijaan tai lisäksi erilaisia pilvialustoja \cite{Bousselmi14}.
 Konttiteknologian käytön yleistyminen on myös johtanut uusiin palvelimettomaan arkkitehtuurin perustuviin ratkaisuihin \cite{Baldini17}.
 
@@ -36,7 +36,7 @@ Virtuaalikoneiden erilliset käyttöjärjestelmät luovat kuitenkin paremman eri
 Virtuaalikoneet voivat olla kontteja sopivampi julkaisuratkaisu varsinkin tietoturvan kannalta kriittisissä tilanteissa.
 Lisäksi virtuaalikoneet tukevat useita käyttöjärjestelmiä, kuten Windows- ja macOS-pohjaisia virtuaalikoneita, kun taas konttiteknologia on kehitetty pääasiassa Linux-pohjaisille järjestelmille \cite{Watada19}.
 Virtuaalikoneiden kontteja suuremmat resurssikustannukset ja hitaampi käynnistymisaika kuitenkin tekevät niistä huonommin soveltuvia konttiorkestrointialustojen kaltaisiin ratkaisuihin.
-Useat pilvialustat tarjoavat virtuaalikoneille konttien orkestrointia vastaavia palveluita, mutta Kuberneteksen kaltaista vakintuunutta ja yhtä kattavaa järjestelmää ei ole kehitetty. % Can't find citation
+Useat pilvialustat tarjoavat virtuaalikoneille konttien orkestrointia vastaavia palveluita, mutta Kuberneteksen kaltaista vakiintunutta ja yhtä kattavaa järjestelmää ei ole kehitetty.
 
 DevOps-toimintamallin vaiheiden kannalta tietoturva on tärkeintä operointi- ja monitorointivaiheissa, joiden osalta palvelun suoritusympäristönä voi toimia virtuaalikone.
 Konttiteknologiaa voidaan kuitenkin käyttää muissa vaiheissa toimintamallia ja mahdollisesti myös operointi- ja monitorointivaiheissa virtuaalikoneen sisällä.
@@ -48,16 +48,16 @@ Virtualisointi, sekä virtuaalikoneiden, että konttien muodossa on hyödyllist�
 Julkaisuratkaisuna voidaan kuitenkin käyttää myös palvelun suorittamista suoraan fyysisellä laitteistolla.
 Kuva \ref{fig:container} esittää perinteisen julkaisutavan resurssien jaon.
 Kontti- ja virtuaalikonejulkaisuista poiketen kaikki sovelluksen ulkopuoliset resurssit ovat jaettuja ja erillistä virtualisointiympäristöä tai konttien suoritusympäristöä ei tarvita. 
-Tämän kaltainen perinteinen julkaisutapa on suorituskyvyltään ja tilavaatimukseltaan tehokkain ratkaisu yksittäisen palvelun julkaisussa, jonka vuoksi sitä käytetään varsinkin sulautetuissa järjestelmissä \cite{Heiser08}.
+Tämän kaltainen perinteinen julkaisutapa on suorituskyvyltään ja tilavaatimuksiltaan tehokkain ratkaisu yksittäisen palvelun julkaisussa, jonka vuoksi sitä käytetään varsinkin sulautetuissa järjestelmissä \cite{Heiser08}.
 
-Virtualisaatio varsinkin konttiteknologian osalta ei kuitenkaan aiheuta merkittäviä kustannuksia \cite{torrez19}.
+Virtualisointi varsinkin konttiteknologian osalta ei kuitenkaan aiheuta merkittäviä kustannuksia \cite{torrez19}.
 Perinteinen julkaisutapa ei myöskään tarjoa virtuaalikonejulkaisun kaltaista eristyneisyyttä tai luvussa \ref{orchestration:devops} käsiteltyjä konttiteknologian etuja.
 Julkaisutapa ei näin ollen sovellu hyvin DevOps-toimintamallin mukaiseen ohjelmistokehitykseen.
 
 \section{Pilvialustat ja palvelimeton arkkitehtuuri}
 
 Pilvialustojen käytöllä tarkoitetaan palvelun tai sen osan toteuttamiseen ulkoisen palveluntarjoajan järjestelmien avulla.
-Pilvialustan käytöllä monia ohjelmistotuotannon ja DevOps-toimintallin vaiheita voidaan tarvittaessa ulkoistaa pilvialustan vastuulle \cite{tomarchio20}.
+Pilvialustan käytöllä monia ohjelmistotuotannon ja DevOps-toimintamallin vaiheita voidaan tarvittaessa ulkoistaa pilvialustan vastuulle \cite{tomarchio20}.
 Erilaisia pilvialustoja on paljon ja niiden toimintatavat ja tarjoamat palvelut vaihtelevat laajalti.
 Tämän vuoksi tässä tutkielmassa pilvialustoja käsitellään käytännön esimerkkinä toimivan \textit{Google Cloud Platform}:in (GCP) kautta, joka on laajalti käytetty ja tarjoaa kattavan määrän erilaisia pilvialustoille ominaisia palveluita \cite{ahuja20}.
 
@@ -66,7 +66,7 @@ Näin ollen kaikki aiemmin käsitellyt julkaisutavat sekä konttien orkestrointi
 Pilvialustan käyttö ei siis ole myös konttiorkestrointialustan käyttöä poissulkeva ratkaisu.
 Luvussa \ref{platforms} mainittu Kuberneteksen \textit{Cloud controller manager} mahdollistaa pilvialustojen ja konttien orkestroinnin etujen yhdistämisen.
 
-Kuva \ref{fig:architecture} esittää esimerkkiarkitehtuurin Kubernetes-klusterin ja GCP-pilvialusta tarjoamien palveluiden yhdistämisestä.
+Kuva \ref{fig:architecture} esittää esimerkkiarkkitehtuurin Kubernetes-klusterin ja GCP-pilvialusta tarjoamien palveluiden yhdistämisestä.
 Arkkitehtuuri sisältää luvussa \ref{orchestration} käsitellyt Kubernetes-klusterin osat.
 Pilvialusta taas tarjoaa muun muassa tietoliikenneratkaisun, pysyväistallennustilaa ja klusterin ulkopuolisen kuormituksen tasaajan.
 
